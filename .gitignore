@@ -1,0 +1,11 @@
+# Hugo default output
+public/
+resources/
+_vendor/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build locks
+.hugo_build.lock

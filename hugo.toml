@@ -1,0 +1,12 @@
+baseURL = 'https://EHBasilii.com/'
+locale = 'zh-cn'
+title = 'EHBasilii Orchestration'
+theme = 'FixIt'
+
+[params.footer]
+  copyright = false
+  author = false
+  icp = ""
+  license = 'Eleutherus Hēsychius Basiliī &copy; 2026 | <a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
+
+
