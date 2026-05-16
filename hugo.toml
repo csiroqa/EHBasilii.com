@@ -1,12 +1,16 @@
-baseURL = 'https://EHBasilii.com/'
+baseURL = 'https://www.EHBasilii.com/'
 locale = 'zh-cn'
 title = 'EHBasilii Orchestration'
 theme = 'FixIt'
 
+[params.author]
+name = "Eleutherus Hēsychius Basiliī"
+email = "contact@ehbasilii.com"
+link = "https://www.ehbasilii.com/"
+avatar = "https://www.ehbasilii.com/images/avatar.jpg"
+
 [params.footer]
-  copyright = false
-  author = false
-  icp = ""
-  license = 'Eleutherus Hēsychius Basiliī &copy; 2026 | <a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
-
-
+copyright = true
+author = true
+icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
+license = 'Except where otherwise noted, works on this site are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>'

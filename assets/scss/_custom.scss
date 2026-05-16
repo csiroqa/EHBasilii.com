@@ -1,0 +1,17 @@
+// ==============================
+// Custom style
+// 自定义样式
+// ==============================
+:root {
+      --content-line-height: 1.85;
+}
+
+article {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+
+      line-break: strict;
+      word-break: break-word;
+
+      font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Georgia", serif;
+}
