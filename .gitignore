@@ -9,3 +9,9 @@ Thumbs.db
 
 # Build locks
 .hugo_build.lock
+
+# Claude Code
+.claude/
+
+# Novel helper
+novel-helper/

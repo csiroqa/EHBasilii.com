@@ -1,6 +1,6 @@
 baseURL = 'https://www.EHBasilii.com/'
 theme = 'FixIt'
-defaultContentLanguage = 'zh-cn'
+defaultContentLanguage = 'zh'
 title = 'EHBasilii Orchestration'
 mainSections = ['posts']
 
@@ -11,14 +11,69 @@ section = ['html', 'rss']
 taxonomy = ['html']
 term = ['html', 'rss']
 
+[params]
+enableTranslationMerge = true
+
 [params.author]
 name = "Eleutherus Hēsychius Basiliī"
 email = "contact@ehbasilii.com"
 link = "https://www.ehbasilii.com/"
-avatar = "https://www.ehbasilii.com/images/avatar.jpg"
+avatar = "/images/avatar.svg"
 
-[params]
-enableTranslationMerge = true
+[params.share]
+enable = true
+Twitter = true
+Facebook = true
+Linkedin = true
+Whatsapp = false
+Pinterest = false
+Tumblr = false
+HackerNews = false
+Reddit = true
+VK = false
+Buffer = false
+Xing = false
+Line = false
+Instapaper = false
+Pocket = false
+Flipboard = false
+Weibo = true
+Myspace = false
+Blogger = false
+Baidu = false
+Odnoklassniki = false
+Evernote = false
+Skype = false
+Trello = false
+Mix = false
+
+# Comment configuration.
+[params.comment]
+enable = false
+
+[params.home]
+
+# Home page profile
+[params.home.profile]
+enable = true
+onlyFirstPage = false
+gravatarEmail = "contact@ehbasilii.com"
+avatarURL = "/images/avatar.svg"
+avatarMenu = ""
+title = ""
+subtitle = ""
+typeit = true
+social = true
+disclaimer = ""
+
+# Home page posts
+[params.home.posts]
+enable = true
+paginate = 6
+imagePreview = true
+
+# [params.header.title]
+# logo = "/images/favicon.svg"
 
 [params.footer]
 copyright = true
@@ -26,68 +81,160 @@ author = true
 powered = { enable = true, hugoLogo = true, themeLogo = true }
 order = { powered = 0, copyright = 0, statistics = 0, visitor = 0, beian = 0 }
 
+[params.social]
+GitHub = ""
+Linkedin = ""
+Twitter = ""
+Instagram = ""
+Facebook = ""
+Telegram = ""
+Medium = ""
+Gitlab = ""
+Youtubelegacy = ""
+Youtubecustom = ""
+Youtubechannel = ""
+Tumblr = ""
+Quora = ""
+Keybase = ""
+Pinterest = ""
+Reddit = ""
+Codepen = ""
+FreeCodeCamp = ""
+Bitbucket = ""
+Stackoverflow = ""
+Weibo = ""
+Odnoklassniki = ""
+VK = ""
+Flickr = ""
+Xing = ""
+Snapchat = ""
+Soundcloud = ""
+Spotify = ""
+Bandcamp = ""
+Paypal = ""
+Fivehundredpx = ""
+Mix = ""
+Goodreads = ""
+Lastfm = ""
+Foursquare = ""
+Hackernews = ""
+Kickstarter = ""
+Patreon = ""
+Steam = ""
+Twitch = ""
+Strava = ""
+Skype = ""
+Whatsapp = ""
+Zhihu = ""
+Douban = ""
+Angellist = ""
+Slidershare = ""
+Jsfiddle = ""
+Deviantart = ""
+Behance = ""
+Dribbble = ""
+Wordpress = ""
+Vine = ""
+Googlescholar = ""
+Researchgate = ""
+Mastodon = ""
+Thingiverse = ""
+Devto = ""
+Gitea = ""
+XMPP = ""
+Matrix = ""
+Bilibili = ""
+ORCID = ""
+Liberapay = ""
+Ko-Fi = ""
+BuyMeaCoffee = ""
+Linktree = ""
+QQ = ""
+QQGroup = ""
+Diaspora = ""
+CSDN = ""
+Discord = ""
+DiscordInvite = ""
+Lichess = "Sadly I cannot log in due to some unknown Captcha error: 300030"
+Pleroma = ""
+Kaggle = ""
+MediaWiki = ""
+Plume = ""
+HackTheBox = ""
+RootMe = ""
+Feishu = ""
+TryHackMe = ""
+Douyin = ""
+TikTok = ""
+Credly = ""
+Bluesky = ""
+Phone = ""
+Email = "EHBasilii@outlook.com"
+RSS = true
+
 # ========================================
 # Multilingual / i18n
 # ========================================
 
+
 [languages]
 
-  [languages.ja]
-    locale = 'ja'
-    label = '日本語'
-    weight = 1
-    hasCJKLanguage = true
-    title = 'EHBasilii Orchestration'
-    [languages.ja.params.footer]
-      icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
-      license = '特に明記されていない限り、このサイトの作品は<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja" target="_blank">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際</a>の下で提供されています。'
+[languages.ja]
+locale = 'ja'
+label = '日本語'
+weight = 1
+hasCJKLanguage = true
+title = 'EHBasilii Orchestration'
+[languages.ja.params.footer]
+icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
+license = '特に明記されていない限り、このサイトの作品は<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja" target="_blank">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際</a>の下で提供されています。'
 
-  [languages.zh-cn]
-    locale = 'zh-CN'
-    label = '中文'
-    weight = 2
-    hasCJKLanguage = true
-    title = 'EHBasilii Orchestration'
-    [languages.zh-cn.params.footer]
-      icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
-      license = '除特别声明外，本站作品均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank">知识共享 署名—非商业性使用—相同方式共享 4.0 协议国际版</a>进行许可。'
+[languages.zh]
+locale = 'zh'
+label = '中文'
+weight = 2
+hasCJKLanguage = true
+title = 'EHBasilii Orchestration'
+[languages.zh.params.footer]
+icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
+license = '除特别声明外，本站作品均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank">知识共享 署名—非商业性使用—相同方式共享 4.0 协议国际版</a>进行许可。'
 
-  [languages.en]
-    locale = 'en'
-    label = 'English'
-    weight = 3
-    hasCJKLanguage = false
-    title = 'EHBasilii Orchestration'
-    [languages.en.params.footer]
-      icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
-      license = 'Except where otherwise noted, works on this site are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.'
+[languages.en]
+locale = 'en'
+label = 'English'
+weight = 3
+hasCJKLanguage = false
+title = 'EHBasilii Orchestration'
+[languages.en.params.footer]
+icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
+license = 'Except where otherwise noted, works on this site are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.'
 
-  [languages.fr]
-    locale = 'fr'
-    label = 'Français'
-    weight = 4
-    hasCJKLanguage = false
-    title = 'EHBasilii Orchestration'
-    [languages.fr.params.footer]
-      icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
-      license = "Sauf indication contraire, les œuvres sur ce site sont sous licence <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr\" target=\"_blank\">Creative Commons Attribution - Utilisation non commerciale - Partage dans les mêmes conditions 4.0 International</a>."
+[languages.fr]
+locale = 'fr'
+label = 'français'
+weight = 4
+hasCJKLanguage = false
+title = 'EHBasilii Orchestration'
+[languages.fr.params.footer]
+icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
+license = "Sauf indication contraire, les œuvres sur ce site sont sous licence <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr\" target=\"_blank\">Creative Commons Attribution - Utilisation non commerciale - Partage dans les mêmes conditions 4.0 International</a>."
 
-  [languages.la]
-    locale = 'la'
-    label = 'Latīnum'
-    weight = 5
-    hasCJKLanguage = false
-    title = 'EHBasilii Orchestratio'
-    [languages.la.params.footer]
-      icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
-      license = 'Nisi aliud significātur, opera in hōc sitū permittuntur sub <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it" target="_blank">Attribūtiō - Nōn commerciālis - Eiusdem licentiae 4.0 Internātiōnālis</a>.'
+[languages.la]
+locale = 'la'
+label = 'Latīnum'
+weight = 5
+hasCJKLanguage = false
+title = 'EHBasilii Orchestratio'
+[languages.la.params.footer]
+icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
+license = 'Nisi aliud significātur, opera in hōc sitū permittuntur sub <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it" target="_blank">Attribūtiō - Nōn commerciālis - Eiusdem licentiae 4.0 Internātiōnālis</a>.'
 
-  [languages.grc]
-    locale = 'grc'
-    label = 'Ἑλλάς'
-    weight = 6
-    hasCJKLanguage = false
-    title = 'ΕΗΒασιλείου Συναρμογή'
-    [languages.grc.params.footer]
-      icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
-      license = 'Ἐὰν μή τι ἄλλο σημαίνηται, τὰ ἐν τῷδε τῷ τόπῳ ἔργα ἐπιτρέπεται ὑπὸ <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.el" target="_blank">Μνεία - Μὴ ἐμπορικὴ χρῆσις - Παρόμοια διανομὴ 4.0 Διεθνής</a>.'
+[languages.grc]
+locale = 'grc'
+label = 'Ἑλλάς'
+weight = 6
+hasCJKLanguage = false
+title = 'ΕΗΒασιλείου Συναρμογή'
+[languages.grc.params.footer]
+icp = '<a href="https://icp.gov.moe/?keyword=20261015" target="_blank">萌ICP备20261015号</a>'
+license = 'Ἐὰν μή τι ἄλλο σημαίνηται, τὰ ἐν τῷδε τῷ τόπῳ ἔργα ἐπιτρέπεται ὑπὸ <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.el" target="_blank">Μνεία - Μὴ ἐμπορικὴ χρῆσις - Παρόμοια διανομὴ 4.0 Διεθνής</a>.'
