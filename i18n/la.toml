@@ -1,0 +1,253 @@
+# Translations for Latin
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# === init ===
+[init]
+hugoVersionError = "Versiō Hugonis nimis humilis est.\n\nVersiō Hugonis praesēns est {{ .Current }}; minima versiō quam Fixit sustentat est {{ .Minimal }}.\n\nSī Hugōnem in tuō ipsīus computātrō curris, dē ascendendō gradū https://gohugo.io/getting-started/installing/#upgrade-hugo pete.\n\nSī in suggestū tertiae partis explicās, secundum id versiōnem cōnfigūrā."
+hugoExtendedWarn = "Versiō Hugonis Extēnsa necessāria est ad SCSS sustinendum."
+configurationError = "Error Cōnfigūrātiōnis\nParameter versiōnis Fixit nōndum rēctē cōnfigūrāvistī. Vidē https://fixit.lruihao.cn/documentation/basics/#theme-configuration"
+compatibilityError = "Error Compatibilitātis ({{ .From }} -> {{ .To }}):\nEmendātiōnem incompatibilem habēs. Vidē https://github.com/hugo-fixit/FixIt/releases"
+devVersionWarn = "Versiōne developmentālī Fixit ūteris. Cōnsīderā versiōnem stabilem adhibēre.\nVidē https://github.com/hugo-fixit/FixIt/releases"
+devEnvWarn = "Curriculum hodiernum est \"development\". \"Systēma commentāriōrum\", \"PWA\", \"CDN\", \"fingerprint\" et \"analytica\" nōn efficientur."
+quicklyUpgrade = "Celeriter ascendē ūtēns mandātō: "
+# === init ===
+
+# === baseof ===
+[baseof]
+backToTop = "Ad Summum Revertī"
+viewComments = "Commenta Vidēre"
+noscript = "Haec pāgina optimē fungitur cum JavaScript excitātur."
+# === baseof ===
+
+# === Taxonomy ===
+[archives]
+other = "Archīva"
+
+[allSome]
+other = "Omnēs {{ .Some }}"
+
+[category]
+other = "Catēgoria"
+
+[categories]
+other = "Catēgoriae"
+
+[collection]
+other = "Collēctiō"
+
+[collections]
+other = "Collēctiōnēs"
+
+[tag]
+other = "Pitacium"
+
+[tags]
+other = "Pitacia"
+
+[posts]
+other = "Scrīpta"
+# === Taxonomy ===
+
+# === Section ===
+[section]
+recentlyUpdated = "Nuper Renovāta"
+
+[section.totalWordCount]
+one = "Ūnum verbum tōtum"
+other = "Verba tōta {{ .Count }}"
+
+[section.archiveCounter]
+one = "Ūnus articulus tantum"
+other = "Articulī {{ .Count }} omnīnō"
+# === Section ===
+
+# === Pagination ===
+[pagination]
+more = "Plūra"
+# === Pagination ===
+
+# === partials/header.html ===
+[header]
+selectLanguage = "Linguam Ēlige"
+noMoretTranslations = "Nūllae plūrēs trānslātiōnēs"
+switchTheme = "Thēma Mūtā"
+# === partials/header.html ===
+
+# === partials/footer.html ===
+[footer]
+poweredBySome = "Fultus ab {{ .Hugo }} | Thēma - {{ .Theme }}"
+siteUV = "Vīsitātōrēs tōtī"
+sitePV = "Vīsitātiōnēs tōtae"
+siteRunning = "Situs currit ..."
+themeEdited = "ēmendātum"
+# === partials/footer.html ===
+
+# === partials/comment.html ===
+[comment]
+valineLang = "en"
+valinePlaceholder = "Commentārium tuum ..."
+facebookLanguageCode = "la"
+# === partials/comment.html ===
+
+# === partials/assets.html ===
+[assets]
+search = "Quaerere"
+searchPlaceholder = "Quaerere titulōs vel contenta ..."
+searchIn = "Quaerere in {{ . }}"
+gotoResultsPage = "Ad pāginam prōventuum eundum ..."
+clear = "Pūrgāre"
+cancel = "Abrogāre"
+noResultsFound = "Nūllī prōventūs invēntī"
+copyToClipboard = "In tabulam incīsōriam exscrībere"
+copyText = "Exscrībere"
+copiedText = "Exscrīptum"
+toggleLineNumbers = "Numerōs līneārum vertere"
+toggleLineWrap = "Flexum vertere"
+toggleCodeEditable = "Fasciculum cōdicis mūtābilem vertere"
+downloadCode = "Cōdicem dēpōnere"
+expandCode = "Fasciculum cōdicis expandere vel colligere"
+fullscreen = "Plēna tēla"
+exitFullscreen = "Plēnam tēlam exīre"
+cookieconsentMessage = "Haec pāgina ūtitur Cookies ad experientiam tuam meliōrem faciendam."
+cookieconsentDismiss = "Intellēxī!"
+cookieconsentLink = "Plūra cognōscere"
+# === partials/assets.html ===
+
+# === partials/plugin/share.html ===
+[shareOn]
+other = "Commūnicāre per"
+# === partials/plugin/share.html ===
+
+# === posts/single.html ===
+[single]
+contents = "Index"
+pin = "Summō fīgere"
+repost = "Retractāre"
+publishedOnDate = "diē {{ .Date }} ēditum"
+views = "vīsūs"
+comments = "commenta"
+author = "Auctor"
+updatedOnDate = "Diē {{ .Date }} renovātum"
+readMarkdown = "Textum orginālem legere"
+viewSource = "Fontem īnspicere"
+editThisPage = "Hanc pāginam recēnsēre"
+reportIssue = "Prōblēma nūntiāre"
+openInEditor = "In ēditōre aperīre"
+back = "Revertī"
+home = "Domum"
+readMore = "Plūra legere"
+expirationReminder = "Hic articulus ad diem {{ .Date }} renovātus est; contentum fortasse obsolevit."
+encryptedAbstract = "Hic articulus encryptus est, ergō contentum eius nōn vidētur!"
+encryptedMessage = "Signum dā, quaesumus"
+password = "Signum"
+enterBtn = "Intrāre"
+encryptyAgain = "Dēnuō encryptāre"
+relatedContent = "Contentum Cognātum"
+
+[single.includedIn]
+categories = "in {{ .Categories }} receptum"
+collections = "in {{ .Collections }} receptum"
+both = "in {{ .Categories }} et {{ .Collections }} receptum"
+
+[single.wordCount]
+one = "Ūnum verbum"
+other = "{{ .Count }} verba"
+
+[single.fuzzyWordCount]
+other = "Circiter {{ .Count }} verba"
+
+[single.readingTime]
+one = "Ūnum minūtum"
+other = "{{ .Count }} minūta"
+
+[single.reward]
+donate = "Dōnāre"
+wechatpay = "WeChat Pay"
+alipay = "Alipay"
+paypal = "PayPal"
+bitcoin = "Bitcoin"
+# === posts/single.html ===
+
+# === 404.html ===
+[pageNotFound]
+other = "Pāgina nōn invēnta"
+
+[pageNotFoundText]
+other = "Paenitet, pāgina quam quaeris nōn exstat."
+# === 404.html ===
+
+# === offline ===
+[offlineTitle]
+other = "Sine Rēte"
+
+[offlineText]
+other = "Interrētī nōn es coniūnctus; sōlae pāginae condītae praestō sunt."
+# === offline ===
+
+# === link redirection ===
+[linkRedirection]
+title = "Nūntius Redirectionis"
+message = "Mox {{ .Title }} relinques; dē sēcūritāte ratiōnis et bonōrum tuōrum cavē."
+confirm = "Vīsitātiōnem continuāre"
+# === link redirection ===
+
+# === GitHub Alert ===
+[alert]
+note = "Nota"
+tip = "Cōnsilium"
+important = "Māgnī Mōmentī"
+warning = "Monitum"
+caution = "Cautiō"
+# === GitHub Alert ===
+
+# === Task lists ===
+[taskList]
+x = "Comprobātum"
+" " = "Nōn comprobātum"
+"/" = "In Cursū"
+"-" = "Abrogātum"
+"<" = "Dēstinātum"
+">" = "Resarcīnātum"
+"!" = "Grāvis"
+"!x" = "Grāvis Comprobātum"
+"?" = "Quaestiō"
+# === Task lists ===
+
+# === shortcodes/admonition.html ===
+[admonition]
+note = "Nota"
+abstract = "Summārium"
+info = "Indicium"
+todo = "Facienda"
+tip = "Cōnsilium"
+success = "Successus"
+question = "Quaestiō"
+warning = "Monitum"
+failure = "Dēfectiō"
+danger = "Perīculum"
+bug = "Cimex"
+example = "Exemplum"
+quote = "Locus citātus"
+# === shortcodes/admonition.html ===
+
+# === shortcodes/version.html ===
+[version]
+new = "NOVUM"
+changed = "MŪTĀTUM"
+deleted = "DĒLĒTUM"
+deprecated = "DEPRECĀTUM"
+# === shortcodes/version.html ===
+
+# === diagram actions ===
+[diagram]
+zoomIn = "Augēre"
+zoomOut = "Minvere"
+reset = "Redintegrāre"
+download = "SVG dēpōnere"
+# === diagram actions ===
+
+# === tabs related ===
+[tabs]
+diagram = "Diagrāmma"
+code = "Cōdex"
+# === tabs related ===

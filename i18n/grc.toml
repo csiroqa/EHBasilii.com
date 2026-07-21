@@ -1,0 +1,252 @@
+# Translations for Ancient Greek (Attic)
+# Ἀττικαὶ μεταφράσεις
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# === init ===
+[init]
+hugoVersionError = "Ἡ τοῦ Hugo ἔκδοσις ταπεινοτέρα ἐστίν.\n\nἩ μὲν παροῦσα ἔκδοσίς ἐστι {{ .Current }}, ἡ δὲ ἐλαχίστη ἣν τὸ FixIt φέρει {{ .Minimal }}.\n\nΕἰ μὲν ἐν τῷ ἰδίῳ ὑπολογιστῇ τῷ Hugo χρῇ, ἔπιθι https://gohugo.io/getting-started/installing/#upgrade-hugo τοῦ ἀναβιβάσαι.\nΕἰ δὲ διὰ τρίτων ἀναπτύσσῃ, τὴν ἔκδοσιν καθ' ἃ προσήκει ῥύθμιζε."
+hugoExtendedWarn = "Δεῖ τῆς ἐκτεταμένης τοῦ Hugo ἐκδόσεως πρὸς ὑποστήριξιν τοῦ SCSS."
+configurationError = "Σφάλμα ῥυθμίσεως\nΟὔπω ὀρθῶς διέταξας τὴν παράμετρον τῆς τοῦ FixIt ἐκδόσεως. Ὅρα https://fixit.lruihao.cn/documentation/basics/#theme-configuration"
+compatibilityError = "Σφάλμα συμβατότητος ({{ .From }} -> {{ .To }}):\nἈσύμβατον ἀνανέωσιν ἔχεις. Ὅρα https://github.com/hugo-fixit/FixIt/releases"
+devVersionWarn = "Ἐν ἀναπτύξει ἐκδόσει τοῦ FixIt χρῇ· σκέψαι σταθερᾷ χρήσασθαι.\nὍρα https://github.com/hugo-fixit/FixIt/releases"
+devEnvWarn = "Τὸ παρὸν περιβάλλον ἐστι \"development\". Τὸ \"σύστημα σχολίων\", \"PWA\", \"CDN\", \"fingerprint\" καὶ \"ἀναλύσεις\" οὐκ ἐνεργηθήσεται."
+quicklyUpgrade = "Ταχέως ἀναβίβασαι τῇ ἐντολῇ: "
+# === init ===
+
+# === baseof ===
+[baseof]
+backToTop = "Ἄνοδος"
+viewComments = "Σχόλια Ἰδεῖν"
+noscript = "Ἡ σελὶς ἥδε ἄριστα λειτουργεῖ μετὰ JavaScript ἐνεργουμένης."
+# === baseof ===
+
+# === Taxonomy ===
+[archives]
+other = "Ἀρχεῖα"
+
+[allSome]
+other = "Πάντα {{ .Some }}"
+
+[category]
+other = "Κατηγορία"
+
+[categories]
+other = "Κατηγορίαι"
+
+[collection]
+other = "Συλλογή"
+
+[collections]
+other = "Συλλογαί"
+
+[tag]
+other = "Σημεῖον"
+
+[tags]
+other = "Σημεῖα"
+
+[posts]
+other = "Ξυγγράμματα"
+# === Taxonomy ===
+
+# === Section ===
+[section]
+recentlyUpdated = "Ἄρτι Ἀνανεωθέντα"
+
+[section.totalWordCount]
+other = "Λέξεις σύμπασαι {{ .Count }}"
+
+[section.archiveCounter]
+other = "{{ .Count }} ξυγγράμματα τὸ σύνολον"
+# === Section ===
+
+# === Pagination ===
+[pagination]
+more = "Πλείω"
+# === Pagination ===
+
+# === partials/header.html ===
+[header]
+selectLanguage = "Γλῶτταν Ἓλοῦ"
+noMoretTranslations = "Οὐκ εἰσὶν ἄλλαι μεταφράσεις"
+switchTheme = "Θέμα Μετάβαλε"
+# === partials/header.html ===
+
+# === partials/footer.html ===
+[footer]
+poweredBySome = "Ὑπὸ {{ .Hugo }} κινούμενον | Θέμα - {{ .Theme }}"
+siteUV = "Ἐπισκέπται σύμπαντες"
+sitePV = "Ἐπισκέψεις σύμπασαι"
+siteRunning = "Ὁ τόπος λειτουργεῖ ..."
+themeEdited = "μεταβεβλημένον"
+# === partials/footer.html ===
+
+# === partials/comment.html ===
+[comment]
+valineLang = "en"
+valinePlaceholder = "Σχόλιόν σου ..."
+facebookLanguageCode = "grc"
+# === partials/comment.html ===
+
+# === partials/assets.html ===
+[assets]
+search = "Ζήτει"
+searchPlaceholder = "Τίτλους ἢ περιεχόμενα ζήτει ..."
+searchIn = "Ἐν {{ . }} ζήτει"
+gotoResultsPage = "Ἐπὶ τὴν σελίδα τῶν εὑρημάτων βάδιζε ..."
+clear = "Κάθαιρε"
+cancel = "Ἄκυρον"
+noResultsFound = "Οὐδὲν εὑρέθη"
+copyToClipboard = "Εἰς τὴν δέλτον μετάγραφε"
+copyText = "Μετάγραφε"
+copiedText = "Μεταγέγραπται"
+toggleLineNumbers = "Ἀριθμοὺς γραμμῶν μετάβαλε"
+toggleLineWrap = "Ἑλιγμὸν μετάβαλε"
+toggleCodeEditable = "Τὸ τοῦ κώδικος τεμάχιον τρεπτὸν ποίει"
+downloadCode = "Τὸν κώδικα κατάθου"
+expandCode = "Ἔκτεινε ἢ σύστελλε τὸ τοῦ κώδικος τεμάχιον"
+fullscreen = "Παντελὴς ὄψις"
+exitFullscreen = "Ἔξιθι παντελοῦς ὄψεως"
+cookieconsentMessage = "Ἡ σελὶς ἥδε χρῆται Cookies πρὸς βελτίωσιν τῆς πείρας σου."
+cookieconsentDismiss = "Συνίημι!"
+cookieconsentLink = "Πλείω μάνθανε"
+# === partials/assets.html ===
+
+# === partials/plugin/share.html ===
+[shareOn]
+other = "Μεταδίδωμι ἐν"
+# === partials/plugin/share.html ===
+
+# === posts/single.html ===
+[single]
+contents = "Πίναξ"
+pin = "Προσπήγνυμι"
+repost = "Ἀναμεταδίδωμι"
+publishedOnDate = "ἐκδέδοται {{ .Date }}"
+views = "ἐπισκέψεις"
+comments = "σχόλια"
+author = "Ξυγγραφεύς"
+updatedOnDate = "Ἀνεκαινίσθη {{ .Date }}"
+readMarkdown = "Ἀναγίγνωσκε τὸ πρωτότυπον"
+viewSource = "Πηγὴν ὅρα"
+editThisPage = "Τήνδε τὴν σελίδα μετάβαλε"
+reportIssue = "Πρόβλημα ἀπάγγελλε"
+openInEditor = "Ἐν τῷ γραφείῳ ἄνοιγε"
+back = "Ἀναχώρησον"
+home = "Οἴκαδε"
+readMore = "Πλείω ἀναγίγνωσκε"
+expirationReminder = "Τόδε τὸ ξύγγραμμα τῇ {{ .Date }} ἀνεκαινίσθη· τάχα παλαιὰ τὰ ἔνεστι."
+encryptedAbstract = "Τόδε τὸ ξύγγραμμα κεκρυπτογράφηται, ὥστε οὐχ ὁρᾶται αὐτοῦ ἡ ἀρχή!"
+encryptedMessage = "Εἰπὲ τὸν ξύνθημα, δέομαι"
+password = "Ξύνθημα"
+enterBtn = "Εἴσιθι"
+encryptyAgain = "Αὖθις κρυπτογράφησον"
+relatedContent = "Τὰ Ἐνεόντα Προσήκοντα"
+
+[single.includedIn]
+categories = "ἐν ταῖς {{ .Categories }} περιεχόμενον"
+collections = "ἐν ταῖς {{ .Collections }} περιεχόμενον"
+both = "ἐν ταῖς {{ .Categories }} καὶ ταῖς {{ .Collections }} περιεχόμενον"
+
+[single.wordCount]
+one = "Λέξις μία"
+other = "{{ .Count }} λέξεις"
+
+[single.fuzzyWordCount]
+other = "Σχεδὸν {{ .Count }} λέξεις"
+
+[single.readingTime]
+one = "Ἓν λεπτόν"
+other = "{{ .Count }} λεπτά"
+
+[single.reward]
+donate = "Δωρεά"
+wechatpay = "WeChat Pay"
+alipay = "Alipay"
+paypal = "PayPal"
+bitcoin = "Bitcoin"
+# === posts/single.html ===
+
+# === 404.html ===
+[pageNotFound]
+other = "Ἡ Σελὶς Οὐχ Εὑρέθη"
+
+[pageNotFoundText]
+other = "Σύγγνωθι, ἡ σελὶς ἣν ζητεῖς οὐκ ἔστιν."
+# === 404.html ===
+
+# === offline ===
+[offlineTitle]
+other = "Ἐκτὸς Δικτύου"
+
+[offlineText]
+other = "Οὐ συνδέδεσαι τῷ δικτύῳ· μόναι αἱ κεκρυμμέναι σελίδες ἔσονται πρόχειροι."
+# === offline ===
+
+# === link redirection ===
+[linkRedirection]
+title = "Ἀναπομπῆς Δήλωσις"
+message = "Μέλλεις ἀποχωρεῖν ἐκ τοῦ {{ .Title }}· φύλαξαι περὶ τῇ ἀσφαλείᾳ τοῦ λογισμοῦ καὶ τῶν χρημάτων."
+confirm = "Ἐπίσκεψιν συνέχιζε"
+# === link redirection ===
+
+# === GitHub Alert ===
+[alert]
+note = "Σημεῖωσαι"
+tip = "Ὑποθήκη"
+important = "Σπουδαῖον"
+warning = "Προειδοποίησις"
+caution = "Εὐλάβεια"
+# === GitHub Alert ===
+
+# === Task lists ===
+[taskList]
+x = "Τετελεσμένον"
+" " = "Ἀτελές"
+"/" = "Ἐν Ἔργῳ"
+"-" = "Ἀκυρωθέν"
+"<" = "Τεταγμένον"
+">" = "Μετατεταγμένον"
+"!" = "Σπουδαῖον"
+"!x" = "Σπουδαῖον Τετελεσμένον"
+"?" = "Ἀπορία"
+# === Task lists ===
+
+# === shortcodes/admonition.html ===
+[admonition]
+note = "Σημεῖωσαι"
+abstract = "Κεφάλαιον"
+info = "Πληροφορία"
+todo = "Πρακτέον"
+tip = "Ὑποθήκη"
+success = "Κατόρθωμα"
+question = "Ἀπορία"
+warning = "Προειδοποίησις"
+failure = "Ἀποτυχία"
+danger = "Κίνδυνος"
+bug = "Σφάλμα"
+example = "Παράδειγμα"
+quote = "Χρῆσις"
+# === shortcodes/admonition.html ===
+
+# === shortcodes/version.html ===
+[version]
+new = "ΝΕΟΝ"
+changed = "ΜΕΤΑΒΕΒΛΗΜΕΝΟΝ"
+deleted = "ΕΞΗΛΗΜΕΝΟΝ"
+deprecated = "ΟΥΚΕΤΙ ΣΥΝΙΣΤΑΤΑΙ"
+# === shortcodes/version.html ===
+
+# === diagram actions ===
+[diagram]
+zoomIn = "Μεγέθυνον"
+zoomOut = "Σμίκρυνον"
+reset = "Ἀποκατάστησον"
+download = "SVG Κατάθου"
+# === diagram actions ===
+
+# === tabs related ===
+[tabs]
+diagram = "Διάγραμμα"
+code = "Κώδιξ"
+# === tabs related ===

@@ -1,17 +1,262 @@
 // ==============================
-// Custom style
-// 自定义样式
+// 书香主题 — Custom Style
 // ==============================
+// 根植于印刷史与版面设计传统，不依附任何
+// 单一设计系统。
+//
+// 明色：宣纸、松烟墨、花青靛蓝
+// 暗色：砚石、烛纸、泥金暖黄
+// ==============================
+
+// ==========================================
+// 一、CSS 自定义属性
+// ==========================================
+
 :root {
-      --content-line-height: 1.85;
+  // ---------- 阅读节奏 ---------- //
+  --content-line-height: 1.85;
+
+  // ==========================================
+  // 主题强调色
+  // ==========================================
+  --fi-primary:    light-dark(#557066, #7a9a8c);   // 铜绿 verdigris
+  --fi-secondary:  light-dark(#6e6963, #9e9992);   // 瓦灰 slate-grey
+  --fi-success:    light-dark(#5a7a56, #7a9a76);   // 竹青 bamboo
+  --fi-info:       light-dark(#567088, #7a92a8);   // 霁色 clearing-blue
+  --fi-warning:    light-dark(#b09248, #caae60);   // 藤黄 gamboge
+  --fi-danger:     light-dark(#b55c54, #cc7a70);   // 朱砂 cinnabar
+
+  // ==========================================
+  // 全局
+  // ==========================================
+  --fi-global-background-color:
+    light-dark(#faf7f0, #1e1d1a);                  // 宣纸 / 砚石
+  --fi-global-font-color:
+    light-dark(#2d2822, #e3ddd3);                  // 松烟墨 / 烛纸
+  --fi-global-font-secondary-color:
+    light-dark(#6e6963, #9e9992);                  // 淡墨 / 灰绢
+  --fi-global-font-tertiary-color:
+    light-dark(#9a948c, #7a7570);                  // 清墨 / 暗绢
+  --fi-global-link-color:
+    light-dark(#4f6782, #c4ae80);                  // 花青 / 泥金
+  --fi-global-link-hover-color:
+    light-dark(#3a4f66, #dac898);                  // 深花青 / 亮泥金
+  --fi-global-border-color:
+    light-dark(#e0dbd0, #3a3632);                  // 纸边 / 砚缘
+  --fi-global-border-color-light:
+    light-dark(#e9e5da, #322f2c);
+  --fi-global-border-color-weight:
+    light-dark(#d6d0c4, #423e3a);
+
+  // ==========================================
+  // 文字选择
+  // ==========================================
+  --fi-selection-color:
+    light-dark(rgba(79, 103, 130, 0.16), rgba(196, 174, 128, 0.18));
+
+  // ==========================================
+  // 页眉
+  // ==========================================
+  --fi-header-background-color:
+    light-dark(#f3efe6, #1a1917);
+  --fi-menu-active-color:
+    light-dark(#2d2822, #e3ddd3);
+  --fi-menu-border-color:
+    light-dark(rgba(45, 40, 34, 0.10), rgba(227, 221, 211, 0.08));
+  --fi-search-background-color:
+    light-dark(#ede8de, #22211e);
+
+  // ==========================================
+  // 标签云
+  // ==========================================
+  --fi-tag-cloud-start:
+    light-dark(#6e6963, #9e9992);
+  --fi-tag-cloud-end:
+    light-dark(#2d2822, #e3ddd3);
+
+  // ==========================================
+  // 分页
+  // ==========================================
+  --fi-pagination-link-color:
+    light-dark(#9a948c, #7a7570);
+  --fi-pagination-link-hover-color:
+    light-dark(#2d2822, #e3ddd3);
+
+  // ==========================================
+  // 文章内链接
+  // ==========================================
+  --fi-single-link-color:
+    light-dark(#4f6782, #c4ae80);                  // 花青 / 泥金
+  --fi-single-link-hover-color:
+    light-dark(#3a4f66, #dac898);                  // 深花青 / 亮泥金
+  --fi-table-background-color:
+    light-dark(#fcf9f4, #22211e);
+  --fi-table-thead-color:
+    light-dark(#efeade, #2c2a27);
+  --fi-table-border-color:
+    light-dark(#e0dbd0, #3a3632);
+  --fi-blockquote-color:
+    light-dark(#6e6963, #9e9992);
+
+  // ==========================================
+  // 分隔线
+  // ==========================================
+  --fi-hr-active-color:
+    light-dark(#b09248, #caae60);                  // 藤黄 gamboge
+
+  // ==========================================
+  // 代码
+  // ==========================================
+  --fi-code-color:
+    light-dark(#48433d, #d3cec6);
+  --fi-code-inline-background-color:
+    light-dark(rgba(185, 178, 165, 0.30), rgba(120, 115, 108, 0.25));
+  --fi-code-block-background-color:
+    light-dark(#f2ede5, #21201d);
+  --fi-code-header-color:
+    light-dark(#6e6963, #9e9992);
+  --fi-code-header-background-color:
+    light-dark(#e9e4da, #1c1b19);
+  --fi-code-highlight-color:
+    light-dark(#e5d8b0, rgba(180, 165, 120, 0.20));
+
+  // ==========================================
+  // GitHub 角标
+  // ==========================================
+  --fi-github-corner-fill:
+    light-dark(#1e1d1a, #f3efe6);
+  --fi-github-corner-color:
+    light-dark(#f3efe6, #1e1d1a);
+
+  // ==========================================
+  // 滚动条
+  // ==========================================
+  --fi-scrollbar-color:
+    light-dark(#d5cfc2, #3a3632);
+  --fi-scrollbar-hover-color:
+    light-dark(#beb8a8, #4a4640);
+  --fi-scrollbar-thumb-color:
+    light-dark(#d5cfc2, #3a3632);
+  --fi-scrollbar-thumb-hover-color:
+    light-dark(#beb8a8, #4a4640);
 }
 
+// ==========================================
+// 二、链接颜色覆盖
+// FixIt 主题的 link mixin 将 SCSS 变量在
+// 编译期展开为 light-dark()，绕过了 CSS
+// 自定义属性，因此需要显式覆盖选择器。
+// ==========================================
+
+// 全局链接（_reboot.scss → @include link(true, true)）
+a,
+a::before,
+a::after {
+  color: light-dark(#4f6782, #c4ae80) !important;
+}
+a:active,
+a:hover {
+  color: light-dark(#3a4f66, #dac898) !important;
+}
+
+// 导航菜单 — 保留墨色，仅悬停着色
+.menu-link {
+  color: light-dark(#2d2822, #e3ddd3) !important;
+}
+.menu-link:active,
+.menu-link:hover {
+  color: light-dark(#4f6782, #c4ae80) !important;
+}
+
+// 文章内链接（single/_base.scss → @include link(false, false)）
+.single .content a,
+.single .content a::before,
+.single .content a::after {
+  color: light-dark(#4f6782, #c4ae80) !important;
+}
+.single .content a:active,
+.single .content a:hover {
+  color: light-dark(#3a4f66, #dac898) !important;
+}
+
+// ==========================================
+// 三、字体系统
+// ==========================================
+// 中文排版传统：正文宋体，界面黑体。
+// 西文 fallback 以 Georgia 承宋、
+// Inter/system-ui 承黑。
+// ==========================================
+
+$font-title:  "Noto Serif SC", "Source Han Serif SC",
+             "Songti SC", "STSong",
+             "Georgia", "Times New Roman", serif;
+$font-body:   "Noto Sans SC", "Source Han Sans SC",
+             "PingFang SC", "Hiragino Sans GB",
+             "Microsoft YaHei", sans-serif;
+$font-mono:   "JetBrains Mono", "Cascadia Mono",
+             "SFMono-Regular", "Consolas",
+             "Liberation Mono", monospace;
+
+// 正文基础
+body {
+  font-family: $font-body;
+}
+
+// 文章 — 衬线，书感
 article {
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  line-break: strict;
+  word-break: break-word;
+  font-family: $font-title;
+  font-size: 1.05em;
+  line-height: var(--content-line-height);
 
-      line-break: strict;
-      word-break: break-word;
+  a:not(.heading-mark) {
+    text-underline-offset: 0.12em;
+    text-decoration-thickness: 0.06em;
+  }
+}
 
-      font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Georgia", serif;
+// 各级标题 — 衬线
+.single-title,
+.single-subtitle,
+.home-title,
+.home-subtitle,
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-title;
+}
+
+// 界面与导航 — 无衬线
+.header-title,
+.menu,
+.menu-link,
+.breadcrumb,
+#toc-auto,
+.post-tags,
+.pagination,
+footer .footer-container,
+.summary .post-footer {
+  font-family: $font-body;
+}
+
+// 代码 — 等宽
+code, pre, kbd, samp,
+.code-block, .highlight {
+  font-family: $font-mono;
+}
+
+// ==========================================
+// 四、阅读微调
+// ==========================================
+
+// 引用 — 斜体仿书中引言
+blockquote {
+  font-style: italic;
+}
+
+// 首页头像 — 柔和阴影
+.home-avatar img {
+  box-shadow: 0 0 0 0.3618em
+    light-dark(rgba(45, 40, 34, 0.04), rgba(227, 221, 211, 0.04)) !important;
 }
