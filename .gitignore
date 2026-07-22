@@ -1,3 +1,6 @@
+# VSCode, claude, etc.
+.*/*
+
 # Hugo default output
 public/
 resources/

@@ -17,27 +17,27 @@
 // （取代 FixIt 默认冷色板）
 
 :root {
-  --fi-primary: light-dark(#557066, #7a9a8c); // 铜绿 verdigris
-  --fi-secondary: light-dark(#6e6963, #9e9992); // 瓦灰 slate-grey
-  --fi-success: light-dark(#5a7a56, #7a9a76); // 竹青 bamboo
-  --fi-info: light-dark(#567088, #7a92a8); // 霁色 clearing-blue
-  --fi-warning: light-dark(#b09248, #caae60); // 藤黄 gamboge
-  --fi-danger: light-dark(#b55c54, #cc7a70); // 朱砂 cinnabar
+  --fi-primary:          light-dark(#557066, #7a9a8c);   // 铜绿 verdigris
+  --fi-secondary:        light-dark(#6e6963, #9e9992);   // 瓦灰 slate-grey
+  --fi-success:          light-dark(#5a7a56, #7a9a76);   // 竹青 bamboo
+  --fi-info:             light-dark(#567088, #7a92a8);   // 霁色 clearing-blue
+  --fi-warning:          light-dark(#b09248, #caae60);   // 藤黄 gamboge
+  --fi-danger:           light-dark(#b55c54, #cc7a70);   // 朱砂 cinnabar
 
   --fi-global-background-color:
-    light-dark(#faf7f0, #1e1d1a); // 宣纸 / 砚石
+    light-dark(#faf7f0, #1e1d1a);                        // 宣纸 / 砚石
   --fi-global-font-color:
-    light-dark(#2d2822, #e3ddd3); // 松烟墨 / 烛纸
+    light-dark(#2d2822, #e3ddd3);                        // 松烟墨 / 烛纸
   --fi-global-font-secondary-color:
-    light-dark(#6e6963, #9e9992); // 淡墨 / 灰绢
+    light-dark(#6e6963, #9e9992);                        // 淡墨 / 灰绢
   --fi-global-font-tertiary-color:
-    light-dark(#9a948c, #7a7570); // 清墨 / 暗绢
+    light-dark(#9a948c, #7a7570);                        // 清墨 / 暗绢
   --fi-global-link-color:
-    light-dark(#4f6782, #c4ae80); // 花青 / 泥金
+    light-dark(#4f6782, #c4ae80);                        // 花青 / 泥金
   --fi-global-link-hover-color:
-    light-dark(#3a4f66, #dac898); // 深花青 / 亮泥金
+    light-dark(#3a4f66, #dac898);                        // 深花青 / 亮泥金
   --fi-global-border-color:
-    light-dark(#e0dbd0, #3a3632); // 纸边 / 砚缘
+    light-dark(#e0dbd0, #3a3632);                        // 纸边 / 砚缘
   --fi-global-border-color-light:
     light-dark(#e9e5da, #322f2c);
   --fi-global-border-color-weight:
@@ -104,54 +104,33 @@
 // 展开为 light-dark()，绕过了 CSS 自定义属性，
 // 故需以选择器直接覆写。
 
-a,
-a::before,
-a::after {
-  color: light-dark(#4f6782, #c4ae80) !important;
-}
+a, a::before, a::after            { color: light-dark(#4f6782, #c4ae80) !important; }
+a:active, a:hover                 { color: light-dark(#3a4f66, #dac898) !important; }
 
-a:active,
-a:hover {
-  color: light-dark(#3a4f66, #dac898) !important;
-}
-
-.menu-link {
-  color: light-dark(#2d2822, #e3ddd3) !important;
-}
-
-.menu-link:active,
-.menu-link:hover {
-  color: light-dark(#4f6782, #c4ae80) !important;
-}
+.menu-link                         { color: light-dark(#2d2822, #e3ddd3) !important; }
+.menu-link:active, .menu-link:hover{ color: light-dark(#4f6782, #c4ae80) !important; }
 
 .single .content a,
 .single .content a::before,
-.single .content a::after {
-  color: light-dark(#4f6782, #c4ae80) !important;
-}
-
+.single .content a::after          { color: light-dark(#4f6782, #c4ae80) !important; }
 .single .content a:active,
-.single .content a:hover {
-  color: light-dark(#3a4f66, #dac898) !important;
-}
+.single .content a:hover           { color: light-dark(#3a4f66, #dac898) !important; }
 
 // ==========================================
 // 三、字体系统
 // ==========================================
 
-$font-title: "Noto Serif SC", "Source Han Serif SC",
-  "Songti SC", "STSong",
-  "Georgia", "Times New Roman", serif;
-$font-body: "Noto Sans SC", "Source Han Sans SC",
-  "PingFang SC", "Hiragino Sans GB",
-  "Microsoft YaHei", sans-serif;
-$font-mono: "JetBrains Mono", "Cascadia Mono",
-  "SFMono-Regular", "Consolas",
-  "Liberation Mono", monospace;
+$font-title:  "Noto Serif SC", "Source Han Serif SC",
+              "Songti SC", "STSong",
+              "Georgia", "Times New Roman", serif;
+$font-body:   "Noto Sans SC", "Source Han Sans SC",
+              "PingFang SC", "Hiragino Sans GB",
+              "Microsoft YaHei", sans-serif;
+$font-mono:   "JetBrains Mono", "Cascadia Mono",
+              "SFMono-Regular", "Consolas",
+              "Liberation Mono", monospace;
 
-body {
-  font-family: $font-body;
-}
+body                              { font-family: $font-body; }
 
 article {
   font-family: $font-title;
@@ -163,46 +142,23 @@ article {
   word-break: break-word;
 }
 
-.single-title,
-.single-subtitle,
-.home-title,
-.home-subtitle,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $font-title;
-}
+.single-title, .single-subtitle,
+.home-title, .home-subtitle,
+h1, h2, h3, h4, h5, h6            { font-family: $font-title; }
 
-.header-title,
-.menu,
-.menu-link,
-.breadcrumb,
-#toc-auto,
-.post-tags,
-.pagination,
-footer .footer-container,
-.summary .post-footer {
-  font-family: $font-body;
-}
+.header-title, .menu, .menu-link,
+.breadcrumb, #toc-auto, .post-tags,
+.pagination, footer .footer-container,
+.summary .post-footer              { font-family: $font-body; }
 
-code,
-pre,
-kbd,
-samp,
-.code-block,
-.highlight {
-  font-family: $font-mono;
-}
+code, pre, kbd, samp,
+.code-block, .highlight            { font-family: $font-mono; }
 
-blockquote {
-  font-style: italic;
-}
+blockquote                         { font-style: italic; }
 
 .home-avatar img {
-  box-shadow: 0 0 0 0.3618em light-dark(rgba(45, 40, 34, 0.04), rgba(227, 221, 211, 0.04)) !important;
+  box-shadow: 0 0 0 0.3618em
+    light-dark(rgba(45, 40, 34, 0.04), rgba(227, 221, 211, 0.04)) !important;
 }
 
 // ==========================================
@@ -213,94 +169,64 @@ blockquote {
 // .single .highlight .chroma
 
 // 关键字 — 赭石
-.single .highlight .chroma .k,
-.single .highlight .chroma .kd,
-.single .highlight .chroma .kn,
-.single .highlight .chroma .kp,
-.single .highlight .chroma .kr,
-.single .highlight .chroma .kt,
-.single .highlight .chroma .kc,
-.single .highlight .chroma .o,
+.single .highlight .chroma .k,  .single .highlight .chroma .kd,
+.single .highlight .chroma .kn, .single .highlight .chroma .kp,
+.single .highlight .chroma .kr, .single .highlight .chroma .kt,
+.single .highlight .chroma .kc, .single .highlight .chroma .o,
 .single .highlight .chroma .ow {
   color: light-dark(#7a5a4a, #d4b08a) !important;
 }
 
 // 字符串 — 竹青
-.single .highlight .chroma .s,
-.single .highlight .chroma .sa,
-.single .highlight .chroma .sb,
-.single .highlight .chroma .sc,
-.single .highlight .chroma .dl,
-.single .highlight .chroma .sd,
-.single .highlight .chroma .s2,
-.single .highlight .chroma .se,
-.single .highlight .chroma .sh,
-.single .highlight .chroma .si,
-.single .highlight .chroma .sx,
-.single .highlight .chroma .sr,
-.single .highlight .chroma .s1,
-.single .highlight .chroma .ss,
+.single .highlight .chroma .s,  .single .highlight .chroma .sa,
+.single .highlight .chroma .sb, .single .highlight .chroma .sc,
+.single .highlight .chroma .dl, .single .highlight .chroma .sd,
+.single .highlight .chroma .s2, .single .highlight .chroma .se,
+.single .highlight .chroma .sh, .single .highlight .chroma .si,
+.single .highlight .chroma .sx, .single .highlight .chroma .sr,
+.single .highlight .chroma .s1, .single .highlight .chroma .ss,
 .single .highlight .chroma .ld {
   color: light-dark(#5a7a56, #8ab88a) !important;
 }
 
 // 数字 — 霁蓝
-.single .highlight .chroma .m,
-.single .highlight .chroma .mb,
-.single .highlight .chroma .mf,
-.single .highlight .chroma .mh,
-.single .highlight .chroma .mi,
-.single .highlight .chroma .il,
+.single .highlight .chroma .m,  .single .highlight .chroma .mb,
+.single .highlight .chroma .mf, .single .highlight .chroma .mh,
+.single .highlight .chroma .mi, .single .highlight .chroma .il,
 .single .highlight .chroma .mo {
   color: light-dark(#567088, #8aa8c0) !important;
 }
 
 // 注释 — 淡墨
-.single .highlight .chroma .c,
-.single .highlight .chroma .ch,
-.single .highlight .chroma .cm,
-.single .highlight .chroma .c1,
-.single .highlight .chroma .cs,
-.single .highlight .chroma .cpf,
+.single .highlight .chroma .c,  .single .highlight .chroma .ch,
+.single .highlight .chroma .cm, .single .highlight .chroma .c1,
+.single .highlight .chroma .cs, .single .highlight .chroma .cpf,
 .single .highlight .chroma .cp {
   color: light-dark(#8a847c, #7a7570) !important;
 }
 
 // 函数 / 标识符 — 花青
-.single .highlight .chroma .nf,
-.single .highlight .chroma .fm,
-.single .highlight .chroma .na,
-.single .highlight .chroma .nl,
-.single .highlight .chroma .py,
-.single .highlight .chroma .n,
-.single .highlight .chroma .ni,
-.single .highlight .chroma .ne,
-.single .highlight .chroma .g,
-.single .highlight .chroma .gh,
-.single .highlight .chroma .go,
-.single .highlight .chroma .gp,
-.single .highlight .chroma .gu,
-.single .highlight .chroma .w,
-.single .highlight .chroma .x,
-.single .highlight .chroma .nb,
-.single .highlight .chroma .nx,
-.single .highlight .chroma .bp {
+.single .highlight .chroma .nf, .single .highlight .chroma .fm,
+.single .highlight .chroma .na, .single .highlight .chroma .nl,
+.single .highlight .chroma .py, .single .highlight .chroma .n,
+.single .highlight .chroma .ni, .single .highlight .chroma .ne,
+.single .highlight .chroma .g,  .single .highlight .chroma .gh,
+.single .highlight .chroma .go, .single .highlight .chroma .gp,
+.single .highlight .chroma .gu, .single .highlight .chroma .w,
+.single .highlight .chroma .x,  .single .highlight .chroma .nb,
+.single .highlight .chroma .nx, .single .highlight .chroma .bp {
   color: light-dark(#4f6782, #b8c8d8) !important;
 }
 
 // 类型 / 标签 — 藤黄（低饱和）
-.single .highlight .chroma .nc,
-.single .highlight .chroma .nn,
-.single .highlight .chroma .nt,
-.single .highlight .chroma .no {
+.single .highlight .chroma .nc, .single .highlight .chroma .nn,
+.single .highlight .chroma .nt, .single .highlight .chroma .no {
   color: light-dark(#8a7a4a, #c8b88a) !important;
 }
 
 // 变量 — 暗粉
-.single .highlight .chroma .nv,
-.single .highlight .chroma .vc,
-.single .highlight .chroma .vg,
-.single .highlight .chroma .vi,
+.single .highlight .chroma .nv, .single .highlight .chroma .vc,
+.single .highlight .chroma .vg, .single .highlight .chroma .vi,
 .single .highlight .chroma .vm {
   color: light-dark(#895f5f, #c8a0a0) !important;
 }
@@ -313,30 +239,22 @@ blockquote {
 // Diff
 .single .highlight .chroma .gd {
   color: light-dark(#b55c54, #cc7a70) !important;
-  background: light-dark(rgba(181, 92, 84, 0.08), rgba(204, 122, 112, 0.10)) !important;
+  background: light-dark(rgba(181,92,84,0.08), rgba(204,122,112,0.10)) !important;
 }
-
 .single .highlight .chroma .gi {
   color: light-dark(#5a7a56, #8ab88a) !important;
-  background: light-dark(rgba(90, 122, 86, 0.08), rgba(138, 184, 138, 0.10)) !important;
+  background: light-dark(rgba(90,122,86,0.08), rgba(138,184,138,0.10)) !important;
 }
-
-.single .highlight .chroma .ge {
-  font-style: italic !important;
-}
-
-.single .highlight .chroma .gs {
-  font-weight: bold !important;
-}
-
-.single .highlight .chroma .gl {
-  text-decoration: underline !important;
-}
-
+.single .highlight .chroma .ge { font-style: italic !important; }
+.single .highlight .chroma .gs { font-weight: bold !important; }
+.single .highlight .chroma .gl { text-decoration: underline !important; }
+// .err 在 PowerShell 中被用于 `:`，故不采用红色。
+// 暖橙色保持了"需要注意"的语意但更加温和。
 .single .highlight .chroma .err,
 .single .highlight .chroma .gr,
 .single .highlight .chroma .gt {
-  color: light-dark(#b55c54, #cc7a70) !important;
+  color: light-dark(#ff4500, #ffaa55) !important;
+  font-weight: 600 !important;
 }
 
 // ==========================================
@@ -349,7 +267,7 @@ blockquote {
   margin: 1.5em 0;
   border-radius: 6px;
   background: var(--fi-code-block-background-color);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 3px 8px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 3px 8px rgba(0,0,0,0.03);
 
   // 左侧朱丝栏装饰线
   &::before {
@@ -364,7 +282,7 @@ blockquote {
 }
 
 // 代码内部
-.single .content .code-block.highlight .code-wrapper>pre {
+.single .content .code-block.highlight .code-wrapper > pre {
   margin: 0;
   border: none;
   background: none !important;
@@ -376,13 +294,8 @@ blockquote {
   font-size: 0.8125em;
   letter-spacing: 0.02em;
 
-  .code-action {
-    opacity: 0.4;
-    transition: opacity 0.15s;
-
-    &:hover {
-      opacity: 1;
-    }
+  .code-action { opacity: 0.4; transition: opacity 0.15s;
+    &:hover { opacity: 1; }
   }
 }
 
@@ -396,7 +309,7 @@ blockquote {
   margin: 1.5em 0;
   border-radius: 6px;
 
-  >table:not([class]) {
+  > table:not([class]) {
     font-size: 0.875em;
     line-height: 1.7;
 
@@ -409,20 +322,16 @@ blockquote {
 
     tbody {
       tr:nth-child(odd) {
-        background: light-dark(rgba(0, 0, 0, 0.016), rgba(255, 255, 255, 0.020));
+        background: light-dark(rgba(0,0,0,0.016), rgba(255,255,255,0.020));
       }
-
       tr:nth-child(even) {
-        background: light-dark(rgba(0, 0, 0, 0.025), rgba(255, 255, 255, 0.030));
+        background: light-dark(rgba(0,0,0,0.025), rgba(255,255,255,0.030));
       }
-
       tr:hover {
-        background: light-dark(rgba(0, 0, 0, 0.042), rgba(255, 255, 255, 0.045));
+        background: light-dark(rgba(0,0,0,0.042), rgba(255,255,255,0.045));
       }
 
-      td {
-        padding: 0.5em 1em;
-      }
+      td { padding: 0.5em 1em; }
 
       td:first-child {
         color: var(--fi-global-font-secondary-color);
@@ -447,32 +356,21 @@ blockquote {
 .single .content .mermaid-neutral svg {
 
   // ---------- 节点 ---------- //
-  .node rect,
-  .node circle,
-  .node polygon,
-  .node path {
+  .node rect, .node circle, .node polygon, .node path {
     fill: light-dark(#f2ede5, #21201d) !important;
     stroke: var(--fi-primary) !important;
   }
 
-  .node .label,
-  .node .label span,
-  .label {
+  .node .label, .node .label span, .label {
     color: var(--fi-global-font-color) !important;
   }
 
   // ---------- 连线 ---------- //
-  .edgePath .path,
-  .edge-threshold-normal,
-  .edge-threshold-visible {
+  .edgePath .path, .edge-threshold-normal, .edge-threshold-visible {
     stroke: var(--fi-secondary) !important;
   }
 
-  .marker,
-  .markerCross,
-  .markerHalf,
-  .markerArrow,
-  .arrowMarkerPath {
+  .marker, .markerCross, .markerHalf, .markerArrow, .arrowMarkerPath {
     fill: var(--fi-secondary) !important;
     stroke: var(--fi-secondary) !important;
   }
@@ -487,12 +385,10 @@ blockquote {
     font-style: italic;
     letter-spacing: 0.01em;
   }
-
   .edgeLabel .label {
     color: var(--fi-global-font-secondary-color) !important;
     font-style: italic;
   }
-
   .edgeLabel rect {
     fill: light-dark(rgba(252, 249, 244, 0.85), rgba(34, 33, 30, 0.85)) !important;
     stroke: none !important;
@@ -500,113 +396,48 @@ blockquote {
 
   // ---------- 集群 ---------- //
   .cluster rect {
-    fill: light-dark(rgba(0, 0, 0, 0.02), rgba(255, 255, 255, 0.02)) !important;
+    fill: light-dark(rgba(0,0,0,0.02), rgba(255,255,255,0.02)) !important;
     stroke: var(--fi-global-border-color-light) !important;
     stroke-dasharray: 4 3;
   }
-
   .cluster .cluster-label span {
     color: var(--fi-global-font-secondary-color) !important;
   }
 
   // ---------- 备注 ---------- //
-  .note {
-    fill: light-dark(#ede8de, #22211e) !important;
-    stroke: var(--fi-primary) !important;
-  }
-
-  .noteText,
-  .noteText span {
-    color: var(--fi-global-font-color) !important;
-  }
+  .note { fill: light-dark(#ede8de, #22211e) !important; stroke: var(--fi-primary) !important; }
+  .noteText, .noteText span { color: var(--fi-global-font-color) !important; }
 
   // ---------- 序列图 ---------- //
-  .actor {
-    fill: light-dark(#f2ede5, #1e1d1a) !important;
-    stroke: var(--fi-primary) !important;
-  }
-
-  .actor-line {
-    stroke: var(--fi-secondary) !important;
-  }
-
-  .messageLine0,
-  .messageLine1 {
-    stroke: var(--fi-global-border-color-weight) !important;
-  }
+  .actor { fill: light-dark(#f2ede5, #1e1d1a) !important; stroke: var(--fi-primary) !important; }
+  .actor-line { stroke: var(--fi-secondary) !important; }
+  .messageLine0, .messageLine1 { stroke: var(--fi-global-border-color-weight) !important; }
 
   // ---------- 类图 ---------- //
-  .classGroup rect {
-    fill: light-dark(#f2ede5, #21201d) !important;
-    stroke: var(--fi-secondary) !important;
-  }
-
-  .classGroup .label,
-  .classGroup .label span {
-    color: var(--fi-global-font-color) !important;
-  }
-
-  .relation {
-    stroke: var(--fi-secondary) !important;
-  }
-
-  .composition,
-  .aggregation,
-  .dependency {
-    fill: var(--fi-secondary) !important;
-    stroke: var(--fi-secondary) !important;
-  }
+  .classGroup rect { fill: light-dark(#f2ede5, #21201d) !important; stroke: var(--fi-secondary) !important; }
+  .classGroup .label, .classGroup .label span { color: var(--fi-global-font-color) !important; }
+  .relation { stroke: var(--fi-secondary) !important; }
+  .composition, .aggregation, .dependency { fill: var(--fi-secondary) !important; stroke: var(--fi-secondary) !important; }
 
   // ---------- 甘特 ---------- //
-  .task {
-    fill: var(--fi-primary) !important;
-    stroke: var(--fi-primary) !important;
-  }
-
-  .taskText {
-    fill: light-dark(#faf7f0, #e3ddd3) !important;
-  }
-
-  .active0 {
-    fill: light-dark(#e5d8b0, rgba(180, 165, 120, 0.20)) !important;
-    stroke: var(--fi-warning) !important;
-  }
-
-  .done0 {
-    fill: light-dark(#d6d0c4, #3a3632) !important;
-    stroke: light-dark(#b8b0a8, #4a4640) !important;
-  }
-
-  .grid .tick line {
-    stroke: var(--fi-global-border-color-light) !important;
-  }
-
-  .grid .tick text {
-    fill: var(--fi-global-font-secondary-color) !important;
-  }
+  .task { fill: var(--fi-primary) !important; stroke: var(--fi-primary) !important; }
+  .taskText { fill: light-dark(#faf7f0, #e3ddd3) !important; }
+  .active0 { fill: light-dark(#e5d8b0, rgba(180,165,120,0.20)) !important; stroke: var(--fi-warning) !important; }
+  .done0 { fill: light-dark(#d6d0c4, #3a3632) !important; stroke: light-dark(#b8b0a8, #4a4640) !important; }
+  .grid .tick line { stroke: var(--fi-global-border-color-light) !important; }
+  .grid .tick text { fill: var(--fi-global-font-secondary-color) !important; }
 
   // ---------- 状态图 ---------- //
-  .stateGroup rect {
-    fill: light-dark(#f2ede5, #21201d) !important;
-    stroke: var(--fi-primary) !important;
-  }
-
-  .stateGroup .state-title {
-    color: var(--fi-global-font-color) !important;
-    font-weight: 600;
-  }
-
-  .transition {
-    stroke: var(--fi-secondary) !important;
-  }
+  .stateGroup rect { fill: light-dark(#f2ede5, #21201d) !important; stroke: var(--fi-primary) !important; }
+  .stateGroup .state-title { color: var(--fi-global-font-color) !important; font-weight: 600; }
+  .transition { stroke: var(--fi-secondary) !important; }
 
   // ---------- 子图 ---------- //
   .subgraph rect {
-    fill: light-dark(rgba(0, 0, 0, 0.015), rgba(255, 255, 255, 0.02)) !important;
+    fill: light-dark(rgba(0,0,0,0.015), rgba(255,255,255,0.02)) !important;
     stroke: var(--fi-global-border-color-light) !important;
     stroke-dasharray: 4 4;
   }
-
   .subgraph .subgraph-label {
     color: var(--fi-global-font-secondary-color) !important;
     font-weight: 600;
@@ -616,65 +447,22 @@ blockquote {
 // ------- 7.2 暗色幅 ------- //
 
 .single .content .mermaid-dark svg {
-
-  .node rect,
-  .node circle,
-  .node polygon,
-  .node path {
-    fill: #21201d !important;
-    stroke: #c4ae80 !important;
-  }
-
-  .edgePath .path {
-    stroke: #7a7570 !important;
-  }
-
-  .marker {
-    fill: #7a7570 !important;
-    stroke: #7a7570 !important;
-  }
-
-  .actor {
-    fill: #1e1d1a !important;
-    stroke: #c4ae80 !important;
-  }
-
-  .note {
-    fill: #1a1917 !important;
-    stroke: #c4ae80 !important;
-  }
-
-  .stateGroup rect {
-    fill: #21201d !important;
-    stroke: #c4ae80 !important;
-  }
-
-  .classGroup rect {
-    fill: #21201d !important;
-    stroke: #3a3632 !important;
-  }
-
-  .task {
-    fill: #7a9a8c !important;
-    stroke: #7a9a8c !important;
-  }
-
-  .taskText {
-    fill: #e3ddd3 !important;
-  }
-
-  .active0 {
-    fill: rgba(180, 165, 120, 0.20) !important;
-    stroke: #caae60 !important;
-  }
-
-  .done0 {
-    fill: #2c2a27 !important;
-    stroke: #3a3632 !important;
-  }
-
-  .subgraph rect {
-    fill: rgba(255, 255, 255, 0.02) !important;
-    stroke: #322f2c !important;
-  }
+  .node rect, .node circle, .node polygon, .node path { fill: #21201d !important; stroke: #c4ae80 !important; }
+  .edgePath .path { stroke: #7a7570 !important; }
+  .marker { fill: #7a7570 !important; stroke: #7a7570 !important; }
+  .actor { fill: #1e1d1a !important; stroke: #c4ae80 !important; }
+  .note { fill: #1a1917 !important; stroke: #c4ae80 !important; }
+  .stateGroup rect { fill: #21201d !important; stroke: #c4ae80 !important; }
+  .classGroup rect { fill: #21201d !important; stroke: #3a3632 !important; }
+  .task { fill: #7a9a8c !important; stroke: #7a9a8c !important; }
+  .taskText { fill: #e3ddd3 !important; }
+  .active0 { fill: rgba(180,165,120,0.20) !important; stroke: #caae60 !important; }
+  .done0 { fill: #2c2a27 !important; stroke: #3a3632 !important; }
+  .subgraph rect { fill: rgba(255,255,255,0.02) !important; stroke: #322f2c !important; }
+  .cluster rect { fill: rgba(255,255,255,0.02) !important; stroke: #322f2c !important; stroke-dasharray: 4 3; }
+  .cluster .cluster-label span { color: #9e9992 !important; }
+  .edgeLabel { background: transparent !important; border: none !important; color: #9e9992 !important; font-style: italic; }
+  .edgeLabel .label { color: #9e9992 !important; font-style: italic; }
+  .label { color: #e3ddd3 !important; }
+  .node .label, .node .label span { color: #e3ddd3 !important; }
 }

@@ -1,30 +1,24 @@
-{ { - /* Page level params is not supported */ -} }
-{ { - $mermaid := .Site.Params.mermaid -} }
-{ { - $mermaidCDN := $mermaid.cdn | default "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs" -} }
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"
 
-import mermaid from "{{ $mermaidCDN }}"
-{ { - with $mermaid.zenuml } }
-import zenuml from "{{ . }}"
-{ { - end } }
-{ { - $loadersArr := slice } }
-{ { - range $i, $loaders := $mermaid.layoutloaders } }
-import loaders{ { $i } } from "{{ $loaders }}"
-{ { - $loadersArr = $loadersArr | append(printf "loaders%d" $i) } }
-{ { - end } }
-{ { - if $mermaid.zenuml } }
-await mermaid.registerExternalDiagrams([zenuml])
-{ { - end } }
 const loaders = []
-for (const item of {{ $loadersArr }}) {
-  if (Array.isArray(item)) {
-    loaders.push(...item)
-  } else {
-    loaders.push(item)
-  }
-}
 mermaid.registerLayoutLoaders(loaders)
 mermaid.startOnLoad = false;
-const config = {{ $mermaid | jsonify }}
+const config = {"cdn":"","fontfamily":"","layout":"dagre","layoutloaders":[],"look":"handDrawn","securitylevel":"loose","themes":["base","base"],"wrapper":true,"zenuml":"",
+  themeVariablesLight: {
+    mainBkg: "#f2ede5", nodeBorder: "#557066",
+    primaryColor: "#f2ede5", primaryBorderColor: "#557066", primaryTextColor: "#2d2822",
+    secondaryColor: "#e9e4da", tertiaryColor: "#fcf9f4",
+    lineColor: "#6e6963", edgeLabelBackground: "#fcf9f4",
+    clusterBkg: "rgba(0,0,0,0.02)", clusterBorder: "#e9e5da", titleColor: "#2d2822",
+  },
+  themeVariablesDark: {
+    mainBkg: "#21201d", nodeBorder: "#c4ae80",
+    primaryColor: "#21201d", primaryBorderColor: "#c4ae80", primaryTextColor: "#e3ddd3",
+    secondaryColor: "#1c1b19", tertiaryColor: "#22211e",
+    lineColor: "#7a7570", edgeLabelBackground: "#22211e",
+    clusterBkg: "rgba(255,255,255,0.02)", clusterBorder: "#322f2c", titleColor: "#e3ddd3",
+  },
+}
 let tabContainerEventBound = false
 let mermaidThemeRerenderBound = false
 let mermaidContainerObserver = null
@@ -216,7 +210,7 @@ function ensureMermaidInitialized(theme, darkMode) {
     layout: config.layout,
     fontFamily: config.fontfamily,
     altFontFamily: config.fontfamily,
-    themeVariables: config.themeVariables,   // ← 改写：注入书卷色板
+    themeVariables: darkMode ? config.themeVariablesDark : config.themeVariablesLight,
   })
 }
 
@@ -252,7 +246,7 @@ async function renderMermaidElement(el, { theme, darkMode } = {}) {
       const svg = result?.svg || ''
       el.innerHTML = svg
       if (typeof result?.bindFunctions === 'function') {
-        try { result.bindFunctions(el) } catch { }
+        try { result.bindFunctions(el) } catch {}
       }
       const svgEl = el.querySelector('svg')
       if (svgEl && !svgEl.id) svgEl.id = id
@@ -613,7 +607,7 @@ function bindThemeSync() {
         const pan = instance.getPan()
         const scale = instance.getScale()
         if (pan && typeof scale === 'number') return { x: pan.x, y: pan.y, scale }
-      } catch { }
+      } catch {}
     }
     return null
   }
