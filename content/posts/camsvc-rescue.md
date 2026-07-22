@@ -30,12 +30,10 @@ hiddenFromFeed: false
 summary: "删掉 Windows camsvc 的 SQLite 数据库后 Wi-Fi 搜不到、摄像头打不开、定位彻底没反应——一次完整的翻车抢救实录，内容包含根因分析、修复流程和教训。"
 ---
 
-# 删除有主数据库后竟然？——Capability Access Manager Service 翻车抢救
-
----
-
 > **系统**: Windows 11 25H2
+>
 > **事发时间**: 早于 2026/07/14
+>
 > **解决时间**: 2026/07/15（重启后）
 
 ---
@@ -154,20 +152,21 @@ graph TB
 或许你可以效仿我第二次的处理
 
 > 笔者写作时发现：
-```powershell 7.6.3
-PS C:\ProgramData\Microsoft\Windows\CapabilityAccessManager> dir
-
-    Directory: C:\ProgramData\Microsoft\Windows\CapabilityAccessManager
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
--a---            26/07/15    01:35        1048576 CapabilityAccessManager.db
--a---            26/07/22    22:02        4423680 CapabilityAccessManager.db-shm
--a---            26/07/22    22:13     2264413832 CapabilityAccessManager.db-wal
--a---            26/07/20    02:56        1048576 CapabilityConsentStorage.db
--a---            26/07/17    13:16          32768 CapabilityConsentStorage.db-shm
--a---            26/07/20    02:56         156592 CapabilityConsentStorage.db-wal
-```
+> 
+> ```powershell 7.6.3
+> PS C:\ProgramData\Microsoft\Windows\CapabilityAccessManager> dir
+>
+>     Directory: C:\ProgramData\Microsoft\Windows\CapabilityAccessManager
+>
+> Mode                 LastWriteTime         Length Name
+> ----                 -------------         ------ ----
+> -a---            26/07/15    01:35        1048576 CapabilityAccessManager.db
+> -a---            26/07/22    22:02        4423680 CapabilityAccessManager.db-shm
+> -a---            26/07/22    22:13     2264413832 CapabilityAccessManager.db-wal
+> -a---            26/07/20    02:56        1048576 CapabilityConsentStorage.db
+> -a---            26/07/17    13:16          32768 CapabilityConsentStorage.db-shm
+> -a---            26/07/20    02:56         156592 CapabilityConsentStorage.db-wal
+> ```
 
 ```powershell 7.6.3
 net stop camsvc

@@ -1,5 +1,5 @@
 ---
-title: "Deleted That 'Orphaned' Database and Everything Broke — A camsvc Rescue Story"
+title: "Deleted That ‘Orphaned’ Database and Everything Broke — A camsvc Rescue Story"
 date: 2026-07-22T00:21:30+08:00
 draft: false
 slug: camsvc-rescue
@@ -31,12 +31,10 @@ hiddenFromFeed: false
 summary: "After deleting Windows camsvc's SQLite databases, Wi-Fi stopped working, the camera wouldn't open, and GPS was completely dead — a full rescue postmortem with root cause analysis, repair steps, and lessons learned."
 ---
 
-# Deleted That 'Orphaned' Database and Everything Broke — A camsvc Rescue Story
-
----
-
 > **System**: Windows 11 25H2
+> 
 > **Incident**: Before 2026/07/14
+> 
 > **Resolution**: 2026/07/15 (after reboot)
 
 ---
@@ -84,7 +82,7 @@ Reality had other plans.
 
 The deleted files looked like this:
 
-```
+```I should write something here in case of warnings
 CapabilityAccessManager.db          ← deleted
 CapabilityAccessManager.db-wal      ← deleted
 CapabilityAccessManager.db-shm      ← deleted
@@ -155,6 +153,7 @@ Here's what worked. Phase A is the minimal path if you haven't dug yourself into
 You might want to follow what I did the second time around.
 
 > Note from the author while writing:
+> 
 > ```powershell 7.6.3
 > PS C:\ProgramData\Microsoft\Windows\CapabilityAccessManager> dir
 >

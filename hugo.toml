@@ -14,6 +14,33 @@ term = ['html', 'rss']
 [params]
 enableTranslationMerge = true
 
+[params.mermaid]
+  # Mermaid 主题变量 — 书卷色板
+  # 注意：FixIt 的 mermaid.js 需额外在
+  # ensureMermaidInitialized 中传递 themeVariables
+  # 给 mermaid.initialize()。见 assets/js/lib/mermaid.js
+  # 影子文件。
+  [params.mermaid.themeVariables]
+    # 明色
+    mainBkg = "#f2ede5"
+    nodeBorder = "#557066"
+    primaryColor = "#f2ede5"
+    primaryBorderColor = "#557066"
+    primaryTextColor = "#2d2822"
+    secondaryColor = "#e9e4da"
+    tertiaryColor = "#fcf9f4"
+    lineColor = "#6e6963"
+    edgeLabelBackground = "#fcf9f4"
+    clusterBkg = "rgba(0,0,0,0.02)"
+    clusterBorder = "#e9e5da"
+    titleColor = "#2d2822"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    tabWidth = 4
+
 [params.author]
 name = "Eleutherus Hēsychius Basiliī"
 email = "contact@ehbasilii.com"
