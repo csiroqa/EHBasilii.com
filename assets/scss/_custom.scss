@@ -6,107 +6,52 @@
 //
 // 明色：宣纸、松烟墨、花青靛蓝
 // 暗色：砚石、烛纸、泥金暖黄
+//
+// 通过 FixIt 主题 main.scss 中的 @use "custom"
+// 自动编译，无需额外配置。
 // ==============================
 
 // ==========================================
 // 一、CSS 自定义属性
 // ==========================================
+// （取代 FixIt 默认冷色板）
 
 :root {
-  // ---------- 阅读节奏 ---------- //
-  --content-line-height: 1.85;
+  --fi-primary:          light-dark(#557066, #7a9a8c);   // 铜绿 verdigris
+  --fi-secondary:        light-dark(#6e6963, #9e9992);   // 瓦灰 slate-grey
+  --fi-success:          light-dark(#5a7a56, #7a9a76);   // 竹青 bamboo
+  --fi-info:             light-dark(#567088, #7a92a8);   // 霁色 clearing-blue
+  --fi-warning:          light-dark(#b09248, #caae60);   // 藤黄 gamboge
+  --fi-danger:           light-dark(#b55c54, #cc7a70);   // 朱砂 cinnabar
 
-  // ==========================================
-  // 主题强调色
-  // ==========================================
-  --fi-primary:    light-dark(#557066, #7a9a8c);   // 铜绿 verdigris
-  --fi-secondary:  light-dark(#6e6963, #9e9992);   // 瓦灰 slate-grey
-  --fi-success:    light-dark(#5a7a56, #7a9a76);   // 竹青 bamboo
-  --fi-info:       light-dark(#567088, #7a92a8);   // 霁色 clearing-blue
-  --fi-warning:    light-dark(#b09248, #caae60);   // 藤黄 gamboge
-  --fi-danger:     light-dark(#b55c54, #cc7a70);   // 朱砂 cinnabar
-
-  // ==========================================
-  // 全局
-  // ==========================================
   --fi-global-background-color:
-    light-dark(#faf7f0, #1e1d1a);                  // 宣纸 / 砚石
+    light-dark(#faf7f0, #1e1d1a);                        // 宣纸 / 砚石
   --fi-global-font-color:
-    light-dark(#2d2822, #e3ddd3);                  // 松烟墨 / 烛纸
+    light-dark(#2d2822, #e3ddd3);                        // 松烟墨 / 烛纸
   --fi-global-font-secondary-color:
-    light-dark(#6e6963, #9e9992);                  // 淡墨 / 灰绢
+    light-dark(#6e6963, #9e9992);                        // 淡墨 / 灰绢
   --fi-global-font-tertiary-color:
-    light-dark(#9a948c, #7a7570);                  // 清墨 / 暗绢
+    light-dark(#9a948c, #7a7570);                        // 清墨 / 暗绢
   --fi-global-link-color:
-    light-dark(#4f6782, #c4ae80);                  // 花青 / 泥金
+    light-dark(#4f6782, #c4ae80);                        // 花青 / 泥金
   --fi-global-link-hover-color:
-    light-dark(#3a4f66, #dac898);                  // 深花青 / 亮泥金
+    light-dark(#3a4f66, #dac898);                        // 深花青 / 亮泥金
   --fi-global-border-color:
-    light-dark(#e0dbd0, #3a3632);                  // 纸边 / 砚缘
+    light-dark(#e0dbd0, #3a3632);                        // 纸边 / 砚缘
   --fi-global-border-color-light:
     light-dark(#e9e5da, #322f2c);
   --fi-global-border-color-weight:
     light-dark(#d6d0c4, #423e3a);
 
-  // ==========================================
-  // 文字选择
-  // ==========================================
-  --fi-selection-color:
-    light-dark(rgba(79, 103, 130, 0.16), rgba(196, 174, 128, 0.18));
-
-  // ==========================================
-  // 页眉
-  // ==========================================
-  --fi-header-background-color:
-    light-dark(#f3efe6, #1a1917);
-  --fi-menu-active-color:
-    light-dark(#2d2822, #e3ddd3);
-  --fi-menu-border-color:
-    light-dark(rgba(45, 40, 34, 0.10), rgba(227, 221, 211, 0.08));
-  --fi-search-background-color:
-    light-dark(#ede8de, #22211e);
-
-  // ==========================================
-  // 标签云
-  // ==========================================
-  --fi-tag-cloud-start:
-    light-dark(#6e6963, #9e9992);
-  --fi-tag-cloud-end:
-    light-dark(#2d2822, #e3ddd3);
-
-  // ==========================================
-  // 分页
-  // ==========================================
-  --fi-pagination-link-color:
-    light-dark(#9a948c, #7a7570);
-  --fi-pagination-link-hover-color:
-    light-dark(#2d2822, #e3ddd3);
-
-  // ==========================================
-  // 文章内链接
-  // ==========================================
-  --fi-single-link-color:
-    light-dark(#4f6782, #c4ae80);                  // 花青 / 泥金
-  --fi-single-link-hover-color:
-    light-dark(#3a4f66, #dac898);                  // 深花青 / 亮泥金
+  // 表格 — 暖纸调
   --fi-table-background-color:
     light-dark(#fcf9f4, #22211e);
   --fi-table-thead-color:
     light-dark(#efeade, #2c2a27);
   --fi-table-border-color:
     light-dark(#e0dbd0, #3a3632);
-  --fi-blockquote-color:
-    light-dark(#6e6963, #9e9992);
 
-  // ==========================================
-  // 分隔线
-  // ==========================================
-  --fi-hr-active-color:
-    light-dark(#b09248, #caae60);                  // 藤黄 gamboge
-
-  // ==========================================
-  // 代码
-  // ==========================================
+  // 代码 — 暖纸调
   --fi-code-color:
     light-dark(#48433d, #d3cec6);
   --fi-code-inline-background-color:
@@ -120,143 +65,393 @@
   --fi-code-highlight-color:
     light-dark(#e5d8b0, rgba(180, 165, 120, 0.20));
 
-  // ==========================================
-  // GitHub 角标
-  // ==========================================
+  --fi-blockquote-color:
+    light-dark(#6e6963, #9e9992);
+  --fi-hr-active-color:
+    light-dark(#b09248, #caae60);
+  --fi-header-background-color:
+    light-dark(#f3efe6, #1a1917);
+  --fi-menu-active-color:
+    light-dark(#2d2822, #e3ddd3);
+  --fi-menu-border-color:
+    light-dark(rgba(45, 40, 34, 0.10), rgba(227, 221, 211, 0.08));
+  --fi-search-background-color:
+    light-dark(#ede8de, #22211e);
   --fi-github-corner-fill:
     light-dark(#1e1d1a, #f3efe6);
   --fi-github-corner-color:
     light-dark(#f3efe6, #1e1d1a);
-
-  // ==========================================
-  // 滚动条
-  // ==========================================
-  --fi-scrollbar-color:
-    light-dark(#d5cfc2, #3a3632);
-  --fi-scrollbar-hover-color:
-    light-dark(#beb8a8, #4a4640);
-  --fi-scrollbar-thumb-color:
-    light-dark(#d5cfc2, #3a3632);
-  --fi-scrollbar-thumb-hover-color:
-    light-dark(#beb8a8, #4a4640);
+  --fi-selection-color:
+    light-dark(rgba(79, 103, 130, 0.16), rgba(196, 174, 128, 0.18));
+  --fi-tag-cloud-start:
+    light-dark(#6e6963, #9e9992);
+  --fi-tag-cloud-end:
+    light-dark(#2d2822, #e3ddd3);
+  --fi-pagination-link-color:
+    light-dark(#9a948c, #7a7570);
+  --fi-pagination-link-hover-color:
+    light-dark(#2d2822, #e3ddd3);
+  --fi-single-link-color:
+    light-dark(#4f6782, #c4ae80);
+  --fi-single-link-hover-color:
+    light-dark(#3a4f66, #dac898);
 }
 
 // ==========================================
-// 二、链接颜色覆盖
-// FixIt 主题的 link mixin 将 SCSS 变量在
-// 编译期展开为 light-dark()，绕过了 CSS
-// 自定义属性，因此需要显式覆盖选择器。
+// 二、链接覆写
 // ==========================================
+// FixIt 的 link mixin 在编译期将 SCSS 变量
+// 展开为 light-dark()，绕过了 CSS 自定义属性，
+// 故需以选择器直接覆写。
 
-// 全局链接（_reboot.scss → @include link(true, true)）
-a,
-a::before,
-a::after {
-  color: light-dark(#4f6782, #c4ae80) !important;
-}
-a:active,
-a:hover {
-  color: light-dark(#3a4f66, #dac898) !important;
-}
+a, a::before, a::after            { color: light-dark(#4f6782, #c4ae80) !important; }
+a:active, a:hover                 { color: light-dark(#3a4f66, #dac898) !important; }
 
-// 导航菜单 — 保留墨色，仅悬停着色
-.menu-link {
-  color: light-dark(#2d2822, #e3ddd3) !important;
-}
-.menu-link:active,
-.menu-link:hover {
-  color: light-dark(#4f6782, #c4ae80) !important;
-}
+.menu-link                         { color: light-dark(#2d2822, #e3ddd3) !important; }
+.menu-link:active, .menu-link:hover{ color: light-dark(#4f6782, #c4ae80) !important; }
 
-// 文章内链接（single/_base.scss → @include link(false, false)）
 .single .content a,
 .single .content a::before,
-.single .content a::after {
-  color: light-dark(#4f6782, #c4ae80) !important;
-}
+.single .content a::after          { color: light-dark(#4f6782, #c4ae80) !important; }
 .single .content a:active,
-.single .content a:hover {
-  color: light-dark(#3a4f66, #dac898) !important;
-}
+.single .content a:hover           { color: light-dark(#3a4f66, #dac898) !important; }
 
 // ==========================================
 // 三、字体系统
 // ==========================================
-// 中文排版传统：正文宋体，界面黑体。
-// 西文 fallback 以 Georgia 承宋、
-// Inter/system-ui 承黑。
-// ==========================================
 
 $font-title:  "Noto Serif SC", "Source Han Serif SC",
-             "Songti SC", "STSong",
-             "Georgia", "Times New Roman", serif;
+              "Songti SC", "STSong",
+              "Georgia", "Times New Roman", serif;
 $font-body:   "Noto Sans SC", "Source Han Sans SC",
-             "PingFang SC", "Hiragino Sans GB",
-             "Microsoft YaHei", sans-serif;
+              "PingFang SC", "Hiragino Sans GB",
+              "Microsoft YaHei", sans-serif;
 $font-mono:   "JetBrains Mono", "Cascadia Mono",
-             "SFMono-Regular", "Consolas",
-             "Liberation Mono", monospace;
+              "SFMono-Regular", "Consolas",
+              "Liberation Mono", monospace;
 
-// 正文基础
-body {
-  font-family: $font-body;
-}
+body                              { font-family: $font-body; }
 
-// 文章 — 衬线，书感
 article {
+  font-family: $font-title;
+  font-size: 1.05em;
+  line-height: 1.85;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   line-break: strict;
   word-break: break-word;
-  font-family: $font-title;
-  font-size: 1.05em;
-  line-height: var(--content-line-height);
-
-  a:not(.heading-mark) {
-    text-underline-offset: 0.12em;
-    text-decoration-thickness: 0.06em;
-  }
 }
 
-// 各级标题 — 衬线
-.single-title,
-.single-subtitle,
-.home-title,
-.home-subtitle,
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-title;
-}
+.single-title, .single-subtitle,
+.home-title, .home-subtitle,
+h1, h2, h3, h4, h5, h6            { font-family: $font-title; }
 
-// 界面与导航 — 无衬线
-.header-title,
-.menu,
-.menu-link,
-.breadcrumb,
-#toc-auto,
-.post-tags,
-.pagination,
-footer .footer-container,
-.summary .post-footer {
-  font-family: $font-body;
-}
+.header-title, .menu, .menu-link,
+.breadcrumb, #toc-auto, .post-tags,
+.pagination, footer .footer-container,
+.summary .post-footer              { font-family: $font-body; }
 
-// 代码 — 等宽
 code, pre, kbd, samp,
-.code-block, .highlight {
-  font-family: $font-mono;
-}
+.code-block, .highlight            { font-family: $font-mono; }
 
-// ==========================================
-// 四、阅读微调
-// ==========================================
+blockquote                         { font-style: italic; }
 
-// 引用 — 斜体仿书中引言
-blockquote {
-  font-style: italic;
-}
-
-// 首页头像 — 柔和阴影
 .home-avatar img {
   box-shadow: 0 0 0 0.3618em
     light-dark(rgba(45, 40, 34, 0.04), rgba(227, 221, 211, 0.04)) !important;
+}
+
+// ==========================================
+// 四、语法高亮 — 书卷调色
+// ==========================================
+// 用 !important 确保覆盖 theme 的 light/dark
+// 代码语法色板。选择器路径与主题一致：
+// .single .highlight .chroma
+
+// 关键字 — 赭石
+.single .highlight .chroma .k,  .single .highlight .chroma .kd,
+.single .highlight .chroma .kn, .single .highlight .chroma .kp,
+.single .highlight .chroma .kr, .single .highlight .chroma .kt,
+.single .highlight .chroma .kc, .single .highlight .chroma .o,
+.single .highlight .chroma .ow {
+  color: light-dark(#7a5a4a, #d4b08a) !important;
+}
+
+// 字符串 — 竹青
+.single .highlight .chroma .s,  .single .highlight .chroma .sa,
+.single .highlight .chroma .sb, .single .highlight .chroma .sc,
+.single .highlight .chroma .dl, .single .highlight .chroma .sd,
+.single .highlight .chroma .s2, .single .highlight .chroma .se,
+.single .highlight .chroma .sh, .single .highlight .chroma .si,
+.single .highlight .chroma .sx, .single .highlight .chroma .sr,
+.single .highlight .chroma .s1, .single .highlight .chroma .ss,
+.single .highlight .chroma .ld {
+  color: light-dark(#5a7a56, #8ab88a) !important;
+}
+
+// 数字 — 霁蓝
+.single .highlight .chroma .m,  .single .highlight .chroma .mb,
+.single .highlight .chroma .mf, .single .highlight .chroma .mh,
+.single .highlight .chroma .mi, .single .highlight .chroma .il,
+.single .highlight .chroma .mo {
+  color: light-dark(#567088, #8aa8c0) !important;
+}
+
+// 注释 — 淡墨
+.single .highlight .chroma .c,  .single .highlight .chroma .ch,
+.single .highlight .chroma .cm, .single .highlight .chroma .c1,
+.single .highlight .chroma .cs, .single .highlight .chroma .cpf,
+.single .highlight .chroma .cp {
+  color: light-dark(#8a847c, #7a7570) !important;
+}
+
+// 函数 / 标识符 — 花青
+.single .highlight .chroma .nf, .single .highlight .chroma .fm,
+.single .highlight .chroma .na, .single .highlight .chroma .nl,
+.single .highlight .chroma .py, .single .highlight .chroma .n,
+.single .highlight .chroma .ni, .single .highlight .chroma .ne,
+.single .highlight .chroma .g,  .single .highlight .chroma .gh,
+.single .highlight .chroma .go, .single .highlight .chroma .gp,
+.single .highlight .chroma .gu, .single .highlight .chroma .w,
+.single .highlight .chroma .x,  .single .highlight .chroma .nb,
+.single .highlight .chroma .nx, .single .highlight .chroma .bp {
+  color: light-dark(#4f6782, #b8c8d8) !important;
+}
+
+// 类型 / 标签 — 藤黄（低饱和）
+.single .highlight .chroma .nc, .single .highlight .chroma .nn,
+.single .highlight .chroma .nt, .single .highlight .chroma .no {
+  color: light-dark(#8a7a4a, #c8b88a) !important;
+}
+
+// 变量 — 暗粉
+.single .highlight .chroma .nv, .single .highlight .chroma .vc,
+.single .highlight .chroma .vg, .single .highlight .chroma .vi,
+.single .highlight .chroma .vm {
+  color: light-dark(#895f5f, #c8a0a0) !important;
+}
+
+// 内置 — 紫灰
+.single .highlight .chroma .nd {
+  color: light-dark(#6a5a7a, #b0a0c0) !important;
+}
+
+// Diff
+.single .highlight .chroma .gd {
+  color: light-dark(#b55c54, #cc7a70) !important;
+  background: light-dark(rgba(181,92,84,0.08), rgba(204,122,112,0.10)) !important;
+}
+.single .highlight .chroma .gi {
+  color: light-dark(#5a7a56, #8ab88a) !important;
+  background: light-dark(rgba(90,122,86,0.08), rgba(138,184,138,0.10)) !important;
+}
+.single .highlight .chroma .ge { font-style: italic !important; }
+.single .highlight .chroma .gs { font-weight: bold !important; }
+.single .highlight .chroma .gl { text-decoration: underline !important; }
+.single .highlight .chroma .err,
+.single .highlight .chroma .gr,
+.single .highlight .chroma .gt { color: light-dark(#b55c54, #cc7a70) !important; }
+
+// ==========================================
+// 五、代码块 — 朱丝栏
+// ==========================================
+
+.single .content .code-block.highlight {
+  position: relative;
+  z-index: 0;
+  margin: 1.5em 0;
+  border-radius: 6px;
+  background: var(--fi-code-block-background-color);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 3px 8px rgba(0,0,0,0.03);
+
+  // 左侧朱丝栏装饰线
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    border-radius: 6px;
+    box-shadow: inset 3px 0 0 0 light-dark(#557066, #c4ae80);
+  }
+}
+
+// 代码内部
+.single .content .code-block.highlight .code-wrapper > pre {
+  margin: 0;
+  border: none;
+  background: none !important;
+}
+
+// 标题栏
+.single .content .code-block .code-header {
+  padding: 0.4em 1em 0.4em calc(1em + 3px);
+  font-size: 0.8125em;
+  letter-spacing: 0.02em;
+
+  .code-action { opacity: 0.4; transition: opacity 0.15s;
+    &:hover { opacity: 1; }
+  }
+}
+
+// ==========================================
+// 六、表格 — 学术风格
+// ==========================================
+// 主题用 >table:not([class])（特异性 0,4,1），
+// 我的选择器必须匹配以覆盖其蓝色斑马纹。
+
+.single .content .table-wrapper {
+  margin: 1.5em 0;
+  border-radius: 6px;
+
+  > table:not([class]) {
+    font-size: 0.875em;
+    line-height: 1.7;
+
+    thead th {
+      padding: 0.55em 1em;
+      font-weight: 600;
+      border-bottom: 2px solid var(--fi-primary);
+      color: var(--fi-global-font-color);
+    }
+
+    tbody {
+      tr:nth-child(odd) {
+        background: light-dark(rgba(0,0,0,0.016), rgba(255,255,255,0.020));
+      }
+      tr:nth-child(even) {
+        background: light-dark(rgba(0,0,0,0.025), rgba(255,255,255,0.030));
+      }
+      tr:hover {
+        background: light-dark(rgba(0,0,0,0.042), rgba(255,255,255,0.045));
+      }
+
+      td { padding: 0.5em 1em; }
+
+      td:first-child {
+        color: var(--fi-global-font-secondary-color);
+      }
+    }
+  }
+}
+
+// ==========================================
+// 七、Mermaid — 书卷配色
+// ==========================================
+// FixIt 用 mermaid `look: handDrawn`（roughjs），
+// 默认主题的蓝/紫色系与此站格格不入，全部以
+// !important 覆写为书香色板：纸色底、主色描边、
+// 灰调连线。
+
+// ------- 7.1 明色幅 ------- //
+
+// 全局兜底：所有 SVG 子元素均以主文字色、无填充
+// 为默认，避免默认蓝紫漏网。
+.single .content .mermaid svg,
+.single .content .mermaid-neutral svg {
+
+  // ---------- 节点 ---------- //
+  .node rect, .node circle, .node polygon, .node path {
+    fill: light-dark(#f2ede5, #21201d) !important;
+    stroke: var(--fi-primary) !important;
+  }
+
+  .node .label, .node .label span, .label {
+    color: var(--fi-global-font-color) !important;
+  }
+
+  // ---------- 连线 ---------- //
+  .edgePath .path, .edge-threshold-normal, .edge-threshold-visible {
+    stroke: var(--fi-secondary) !important;
+  }
+
+  .marker, .markerCross, .markerHalf, .markerArrow, .arrowMarkerPath {
+    fill: var(--fi-secondary) !important;
+    stroke: var(--fi-secondary) !important;
+  }
+
+  // ---------- 边标签 — 书眉风格 ---------- //
+  .edgeLabel {
+    background: transparent !important;
+    color: var(--fi-global-font-secondary-color) !important;
+    border: none !important;
+    padding: 0.05em 0.3em;
+    font-size: 0.75em;
+    font-style: italic;
+    letter-spacing: 0.01em;
+  }
+  .edgeLabel .label {
+    color: var(--fi-global-font-secondary-color) !important;
+    font-style: italic;
+  }
+  .edgeLabel rect {
+    fill: light-dark(rgba(252, 249, 244, 0.85), rgba(34, 33, 30, 0.85)) !important;
+    stroke: none !important;
+  }
+
+  // ---------- 集群 ---------- //
+  .cluster rect {
+    fill: light-dark(rgba(0,0,0,0.02), rgba(255,255,255,0.02)) !important;
+    stroke: var(--fi-global-border-color-light) !important;
+    stroke-dasharray: 4 3;
+  }
+  .cluster .cluster-label span {
+    color: var(--fi-global-font-secondary-color) !important;
+  }
+
+  // ---------- 备注 ---------- //
+  .note { fill: light-dark(#ede8de, #22211e) !important; stroke: var(--fi-primary) !important; }
+  .noteText, .noteText span { color: var(--fi-global-font-color) !important; }
+
+  // ---------- 序列图 ---------- //
+  .actor { fill: light-dark(#f2ede5, #1e1d1a) !important; stroke: var(--fi-primary) !important; }
+  .actor-line { stroke: var(--fi-secondary) !important; }
+  .messageLine0, .messageLine1 { stroke: var(--fi-global-border-color-weight) !important; }
+
+  // ---------- 类图 ---------- //
+  .classGroup rect { fill: light-dark(#f2ede5, #21201d) !important; stroke: var(--fi-secondary) !important; }
+  .classGroup .label, .classGroup .label span { color: var(--fi-global-font-color) !important; }
+  .relation { stroke: var(--fi-secondary) !important; }
+  .composition, .aggregation, .dependency { fill: var(--fi-secondary) !important; stroke: var(--fi-secondary) !important; }
+
+  // ---------- 甘特 ---------- //
+  .task { fill: var(--fi-primary) !important; stroke: var(--fi-primary) !important; }
+  .taskText { fill: light-dark(#faf7f0, #e3ddd3) !important; }
+  .active0 { fill: light-dark(#e5d8b0, rgba(180,165,120,0.20)) !important; stroke: var(--fi-warning) !important; }
+  .done0 { fill: light-dark(#d6d0c4, #3a3632) !important; stroke: light-dark(#b8b0a8, #4a4640) !important; }
+  .grid .tick line { stroke: var(--fi-global-border-color-light) !important; }
+  .grid .tick text { fill: var(--fi-global-font-secondary-color) !important; }
+
+  // ---------- 状态图 ---------- //
+  .stateGroup rect { fill: light-dark(#f2ede5, #21201d) !important; stroke: var(--fi-primary) !important; }
+  .stateGroup .state-title { color: var(--fi-global-font-color) !important; font-weight: 600; }
+  .transition { stroke: var(--fi-secondary) !important; }
+
+  // ---------- 子图 ---------- //
+  .subgraph rect {
+    fill: light-dark(rgba(0,0,0,0.015), rgba(255,255,255,0.02)) !important;
+    stroke: var(--fi-global-border-color-light) !important;
+    stroke-dasharray: 4 4;
+  }
+  .subgraph .subgraph-label {
+    color: var(--fi-global-font-secondary-color) !important;
+    font-weight: 600;
+  }
+}
+
+// ------- 7.2 暗色幅 ------- //
+
+.single .content .mermaid-dark svg {
+  .node rect, .node circle, .node polygon, .node path { fill: #21201d !important; stroke: #c4ae80 !important; }
+  .edgePath .path { stroke: #7a7570 !important; }
+  .marker { fill: #7a7570 !important; stroke: #7a7570 !important; }
+  .actor { fill: #1e1d1a !important; stroke: #c4ae80 !important; }
+  .note { fill: #1a1917 !important; stroke: #c4ae80 !important; }
+  .stateGroup rect { fill: #21201d !important; stroke: #c4ae80 !important; }
+  .classGroup rect { fill: #21201d !important; stroke: #3a3632 !important; }
+  .task { fill: #7a9a8c !important; stroke: #7a9a8c !important; }
+  .taskText { fill: #e3ddd3 !important; }
+  .active0 { fill: rgba(180,165,120,0.20) !important; stroke: #caae60 !important; }
+  .done0 { fill: #2c2a27 !important; stroke: #3a3632 !important; }
+  .subgraph rect { fill: rgba(255,255,255,0.02) !important; stroke: #322f2c !important; }
 }
