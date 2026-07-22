@@ -1,22 +1,22 @@
-{{- /* Page level params is not supported */ -}}
-{{- $mermaid := .Site.Params.mermaid -}}
-{{- $mermaidCDN := $mermaid.cdn | default "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs" -}}
+{ { - /* Page level params is not supported */ -} }
+{ { - $mermaid := .Site.Params.mermaid -} }
+{ { - $mermaidCDN := $mermaid.cdn | default "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs" -} }
 
 import mermaid from "{{ $mermaidCDN }}"
-{{- with $mermaid.zenuml }}
+{ { - with $mermaid.zenuml } }
 import zenuml from "{{ . }}"
-{{- end }}
-{{- $loadersArr := slice }}
-{{- range $i, $loaders := $mermaid.layoutloaders }}
-import loaders{{ $i }} from "{{ $loaders }}"
-{{- $loadersArr = $loadersArr | append (printf "loaders%d" $i) }}
-{{- end }}
-{{- if $mermaid.zenuml }}
+{ { - end } }
+{ { - $loadersArr := slice } }
+{ { - range $i, $loaders := $mermaid.layoutloaders } }
+import loaders{ { $i } } from "{{ $loaders }}"
+{ { - $loadersArr = $loadersArr | append(printf "loaders%d" $i) } }
+{ { - end } }
+{ { - if $mermaid.zenuml } }
 await mermaid.registerExternalDiagrams([zenuml])
-{{- end }}
+{ { - end } }
 const loaders = []
-for(const item of {{ $loadersArr }}) {
-  if(Array.isArray(item)) {
+for (const item of {{ $loadersArr }}) {
+  if (Array.isArray(item)) {
     loaders.push(...item)
   } else {
     loaders.push(item)
@@ -252,7 +252,7 @@ async function renderMermaidElement(el, { theme, darkMode } = {}) {
       const svg = result?.svg || ''
       el.innerHTML = svg
       if (typeof result?.bindFunctions === 'function') {
-        try { result.bindFunctions(el) } catch {}
+        try { result.bindFunctions(el) } catch { }
       }
       const svgEl = el.querySelector('svg')
       if (svgEl && !svgEl.id) svgEl.id = id
@@ -613,7 +613,7 @@ function bindThemeSync() {
         const pan = instance.getPan()
         const scale = instance.getScale()
         if (pan && typeof scale === 'number') return { x: pan.x, y: pan.y, scale }
-      } catch {}
+      } catch { }
     }
     return null
   }

@@ -81,7 +81,7 @@ icacls "C:\ProgramData\Microsoft\Windows\CapabilityAccessManager" /grant adminis
 
 我当时删掉的文件长这样：
 
-```我不填会有我不喜欢的 warning
+```我不填的话会有我不喜欢的 warning
 CapabilityAccessManager.db          ← 已删除
 CapabilityAccessManager.db-wal      ← 已删除
 CapabilityAccessManager.db-shm      ← 已删除
