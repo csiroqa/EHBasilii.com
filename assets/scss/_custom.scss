@@ -12,7 +12,159 @@
 // ==============================
 
 // ==========================================
-// 一、CSS 自定义属性
+// 一、自托管 Web 字体（@font-face）
+// ==========================================
+
+// —— Gentium Book Plus（主字体）——
+
+@font-face {
+  font-family: "Gentium Book Plus";
+  src: url("/fonts/gentium-book-plus/GentiumBookPlus-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gentium Book Plus";
+  src: url("/fonts/gentium-book-plus/GentiumBookPlus-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gentium Book Plus";
+  src: url("/fonts/gentium-book-plus/GentiumBookPlus-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gentium Book Plus";
+  src: url("/fonts/gentium-book-plus/GentiumBookPlus-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Iosevka Fixed Slab";
+  src: url("/fonts/iosevka-fixed-slab/IosevkaFixedSlab-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Iosevka Fixed Slab";
+  src: url("/fonts/iosevka-fixed-slab/IosevkaFixedSlab-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// 在 font-family 堆栈中保留 "Source Serif" 作降级。
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/source-serif-4/SourceSerif4-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/source-serif-4/SourceSerif4-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/source-serif-4/SourceSerif4-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/source-serif-4/SourceSerif4-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/source-sans-3/SourceSans3-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/source-sans-3/SourceSans3-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/source-sans-3/SourceSans3-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/source-sans-3/SourceSans3-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Han Serif SC";
+  src: url("/fonts/source-han-serif-sc/SourceHanSerifSC-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Han Serif SC";
+  src: url("/fonts/source-han-serif-sc/SourceHanSerifSC-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Han Sans SC";
+  src: url("/fonts/source-han-sans-sc/SourceHanSansSC-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Han Sans SC";
+  src: url("/fonts/source-han-sans-sc/SourceHanSansSC-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ==========================================
+// 二、CSS 自定义属性
 // ==========================================
 // （取代 FixIt 默认冷色板）
 
@@ -102,11 +254,110 @@
 }
 
 // ==========================================
-// 二、链接覆写
+// 三、语言切换下拉框 — 字族与字号
 // ==========================================
-// FixIt 的 link mixin 在编译期将 SCSS 变量
-// 展开为 light-dark()，绕过了 CSS 自定义属性，
-// 故需以选择器直接覆写。
+// 桌面版为 <ul> 子菜单，手机版为 <select>。
+// 各 <a>/<option> 继承页面 lang 而非自身语言，
+// 故 :lang() 不可用，改用 [href] 属性选择器。
+//
+// 字族策略：
+//   日本語       → Source Han Serif JP
+//   中文         → Source Han Serif SC
+//   English 等   → Source Serif 4
+
+// ── 桌面版 .sub-menu ──
+// 用 [title] 而非 href：当前页显示为 <span title="Name">，
+// 非当前页为 <a title="Name">。zh 为默认语言时其
+// RelPermalink 可能是 / 而非 /zh/，故 href 不可靠。
+
+.language-switch .sub-menu [title="日本語"] {
+  font-size: 16px;
+  font-family: "Source Han Serif JP", "Source Han Serif", serif;
+}
+
+.language-switch .sub-menu [title="中文"] {
+  font-size: 16px;
+  font-family: "Source Han Serif SC", "Source Han Serif", serif;
+}
+
+.language-switch .sub-menu [title="English"] {
+  font-size: 17px;
+  font-family: "Source Serif 4", serif;
+}
+
+.language-switch .sub-menu [title="français"] {
+  font-size: 17px;
+  font-family: "Source Serif 4", serif;
+}
+
+.language-switch .sub-menu [title="Latīnum"] {
+  font-size: 17px;
+  font-family: "Source Serif 4", serif;
+}
+
+.language-switch .sub-menu [title="Ἑλλάς"] {
+  font-size: 17px;
+  font-family: "Source Serif 4", serif;
+}
+
+// ── 移除语言子菜单滚动条 ──
+// 主题给 .sub-menu 设了 max-height: 60vh + overflow-y: auto，
+// 且 .menu-item 有 height: var(--fi-submenu-height) + overflow-x: hidden，
+// 换用不同字族后高度微变曾触发滚动条
+
+#header-desktop .header-wrapper .menu .menu-item.language-switch .sub-menu {
+  max-height: none;
+  overflow: visible;
+}
+
+#header-desktop .header-wrapper .menu .menu-item.language-switch .sub-menu .menu-item {
+  height: auto;
+  overflow: visible;
+  max-width: 16rem;
+}
+
+// ── 手机版 <select> ──
+// 中文的 value 在 zh 页面为 /，在非 zh 页面为 /zh/，用 textContent 无法选择，故同时覆盖两种情况。
+
+#language-select option[value="/"] {
+  font-size: 16px;
+  font-family: "Source Han Serif SC", "Source Han Sans SC", "Source Han Serif", serif;
+}
+
+#language-select option[value^="/zh/"] {
+  font-size: 16px;
+  font-family: "Source Han Serif SC", "Source Han Sans SC", "Source Han Serif", serif;
+}
+
+#language-select option[value^="/ja/"] {
+  font-size: 16px;
+  font-family: "Source Han Serif JP", "Source Han Serif", serif;
+}
+
+#language-select option[value^="/en/"] {
+  font-size: 17px;
+  font-family: "Source Serif 4", serif;
+}
+
+#language-select option[value^="/fr/"] {
+  font-size: 17px;
+  font-family: "Source Serif 4", serif;
+}
+
+#language-select option[value^="/la/"] {
+  font-size: 17px;
+  font-family: "Source Serif 4", serif;
+}
+
+#language-select option[value^="/grc/"] {
+  font-size: 17px;
+  font-family: "Source Serif 4", serif;
+}
+
+// ==========================================
+// 四、链接覆写
+// ==========================================
+// FixIt 的 link mixin 在编译期将 SCSS 变量展开为 light-dark()，绕过了 CSS 自定义属性，故需以选择器直接覆写。
 
 a,
 a::before,
@@ -140,7 +391,7 @@ a:hover {
 }
 
 // ==========================================
-// 三、字体系统
+// 五、字体系统
 // ==========================================
 
 $font-mono: "Iosevka Fixed Slab", "Cascadia Mono", "JetBrains Mono",
@@ -154,15 +405,26 @@ body {
   font-variant-numeric: oldstyle-nums;
 }
 
+// 首页文章卡片元数据统一 18.7px（比正文略小，格书）
+.home .single.summary .post-meta,
+.home .single.summary .post-footer {
+  font-size: 18.7px;
+}
+
+// 站底字号
+footer.footer {
+  font-size: 16px;
+}
+
 :lang(zh) body {
-  font-family: "Source Serif", "Source Han Serif SC", "Source Han Serif", serif;
-  font-size: 18.8px;
+  font-family: "Source Serif 4", "Source Serif", "Source Han Serif SC", "Source Han Serif", serif;
+  font-size: 18.7px;
   font-variant-numeric: normal;
 }
 
 :lang(ja) body {
-  font-family: "Source Serif", "Source Han Serif JP", "Source Han Serif", serif;
-  font-size: 18.8px;
+  font-family: "Source Serif 4", "Source Serif", "Source Han Serif JP", "Source Han Serif", serif;
+  font-size: 18.7px;
   font-variant-numeric: normal;
 }
 
@@ -208,11 +470,9 @@ blockquote {
 }
 
 // ==========================================
-// 四、语法高亮 — 书卷调色
+// 六、语法高亮 — 书卷调色
 // ==========================================
-// 用 !important 确保覆盖 theme 的 light/dark
-// 代码语法色板。选择器路径与主题一致：
-// .single .highlight .chroma
+// 用 !important 确保覆盖 theme 的 light/dark代码语法色板。选择器路径与主题一致：.single .highlight .chroma
 
 // 关键字 — 赭石
 .single .highlight .chroma .k,
@@ -340,12 +600,12 @@ blockquote {
 .single .highlight .chroma .err,
 .single .highlight .chroma .gr,
 .single .highlight .chroma .gt {
-  color: light-dark(#ff4500, #ffaa55) !important;
+  color: light-dark(#ff4500, #ff7700) !important;
   font-weight: 600 !important;
 }
 
 // ==========================================
-// 五、代码块 — 朱丝栏
+// 七、代码块 — 朱丝栏
 // ==========================================
 
 .single .content .code-block.highlight {
@@ -392,10 +652,9 @@ blockquote {
 }
 
 // ==========================================
-// 六、表格 — 学术风格
+// 八、表格 — 学术风格
 // ==========================================
-// 主题用 >table:not([class])（特异性 0,4,1），
-// 我的选择器必须匹配以覆盖其蓝色斑马纹。
+// 主题用 >table:not([class])（特异性 0,4,1），选择器必须匹配以覆盖其蓝色斑马纹。
 
 .single .content .table-wrapper {
   margin: 1.5em 0;
@@ -437,14 +696,14 @@ blockquote {
 }
 
 // ==========================================
-// 七、Mermaid — 书卷配色
+// 九、Mermaid — 书卷配色
 // ==========================================
 // FixIt 用 mermaid `look: handDrawn`（roughjs），
 // 默认主题的蓝/紫色系与此站格格不入，全部以
 // !important 覆写为书香色板：纸色底、主色描边、
 // 灰调连线。
 
-// ------- 7.1 明色幅 ------- //
+// ------- 8.1 明色幅 ------- //
 
 // 全局兜底：所有 SVG 子元素均以主文字色、无填充
 // 为默认，避免默认蓝紫漏网。
@@ -618,7 +877,7 @@ blockquote {
   }
 }
 
-// ------- 7.2 暗色幅 ------- //
+// ------- 8.2 暗色幅 ------- //
 
 .single .content .mermaid-dark svg {
 

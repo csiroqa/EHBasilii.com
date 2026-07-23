@@ -41,7 +41,7 @@ summary: "After deleting Windows camsvc's SQLite databases, Wi-Fi stopped workin
 
 ## 1. How It Happened
 
-So here's the deal. The `camsvc` (Capability Access Manager Service) `SQLite` database on my machine had let its `WAL` log file balloon to **over 20 GB** — for reasons best known to itself — and my disk was screaming. Figured I'd just torch a few database files to claw some space back. Did the obvious thing:
+So here's the deal. The `camsvc` (Capability Access Manager Service) `SQLite` database on my machine had let its WAL log files balloon to **over 40 GB** in total — for reasons best known to itself — and my disk was screaming. Figured I'd just torch a few database files to claw some space back. Did the obvious thing:
 
 ```powershell 7.6.3
 takeown /f "C:\ProgramData\Microsoft\Windows\CapabilityAccessManager" /r /d y
@@ -56,7 +56,7 @@ Reality had other plans.
 
 | Time           | What happened                                                                  |
 | -------------- | ------------------------------------------------------------------------------ |
-| Before         | `camsvc`'s `SQLite` `WAL` logs hit 40+ GB total; I deleted the whole directory |
+| Before         | `camsvc`'s `SQLite` WAL logs hit 40+ GB total; I deleted the whole directory   |
 | 07/14 21:18    | Wi-Fi won't connect, camera won't open, GPS completely dead                    |
 | 21:19–23:52    | Tried everything myself: `sfc`, `DISM`, resetting `UWP` packages... all futile |
 | 23:52          | Sudden realization: this was because I deleted those databases                 |

@@ -20,6 +20,12 @@ noClasses = false
 codeFences = true
 tabWidth = 4
 
+[minify]
+disableHTML = false
+disableCSS = false
+disableJS = false
+minifyOutput = true
+
 [params.author]
 name = "Eleutherus Hēsychius Basiliī"
 email = "contact@ehbasilii.com"

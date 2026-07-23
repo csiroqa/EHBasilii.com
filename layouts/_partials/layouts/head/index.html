@@ -112,6 +112,12 @@
   <link rel="alternate" type="application/feed+json" href="{{ .Permalink }}" title="{{ $title }}" />
 {{- end -}}
 
+{{- /* ========== Resource Hints ========== */ -}}
+{{- /* Preload critical self-hosted fonts */ -}}
+<link rel="preload" href="/fonts/gentium-book-plus/GentiumBookPlus-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/gentium-book-plus/GentiumBookPlus-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/iosevka-fixed-slab/IosevkaFixedSlab-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
 {{- /* Core stylesheets */ -}}
 {{- /* Config CSS */ -}}
 {{- $options := dict "Source" "scss/config.template.scss" "Template" "scss/config.scss" "Fingerprint" $fingerprint -}}
@@ -305,6 +311,28 @@
   </script>
 {{- end -}}
 
+{{- /* Page-specific CJK font — lightweight, only chars used on this page */ -}}
+{{- $fontMap := .Site.Data.fonts -}}
+{{- if and .IsPage .File $fontMap -}}
+  {{- $filePath := .File.Path | replaceRE "\\\\" "/" -}}
+  {{- $pageFont := index $fontMap $filePath -}}
+  {{- if $pageFont -}}
+    <style>
+      @font-face {
+        font-family: "Source Han SC Page";
+        src: url("/fonts/page-subsets/{{ $pageFont }}.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      .single .content:lang(zh),
+      .single .content:lang(ja) {
+        font-family: "Source Han SC Page", "Source Serif 4", "Source Serif", "Source Han Serif SC", "Source Han Serif", serif !important;
+      }
+    </style>
+  {{- end -}}
+{{- end -}}
+
 {{- /* ========== SCRIPT: Early-Loaded Head Scripts ========== */ -}}
 
 {{- /* Theme Color Scheme Detection (runs before page render) */ -}}
@@ -315,9 +343,10 @@
 {{- end -}}
 {{- dict "Source" (resources.Get "js/head/color-scheme.js") "Build" $options "Fingerprint" $fingerprint | partial "plugin/script.html" -}}
 
-{{- /* Hyphenopoly.js for cross-browser hyphenation */ -}}
-<script src="/js/hyphenopoly/Hyphenopoly_Loader.js"></script>
-<script>
+{{- /* Hyphenopoly.js for cross-browser hyphenation — only on article pages, non-blocking */ -}}
+{{- if .IsPage -}}
+<script src="/js/hyphenopoly/Hyphenopoly_Loader.js" defer></script>
+<script defer>
   Hyphenopoly.config({
     require: {
       "en": "FORCEHYPHENOPOLY",
@@ -337,6 +366,7 @@
     }
   });
 </script>
+{{- end -}}
 
 {{- /* Custom head */ -}}
 {{- block "custom-head" . }}{{ end -}}
