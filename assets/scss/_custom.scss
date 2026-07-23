@@ -120,20 +120,15 @@ a:active, a:hover                 { color: light-dark(#3a4f66, #dac898) !importa
 // 三、字体系统
 // ==========================================
 
-$font-title:  "Noto Serif SC", "Source Han Serif SC",
-              "Songti SC", "STSong",
-              "Georgia", "Times New Roman", serif;
-$font-body:   "Noto Sans SC", "Source Han Sans SC",
-              "PingFang SC", "Hiragino Sans GB",
-              "Microsoft YaHei", sans-serif;
 $font-mono:   "JetBrains Mono", "Cascadia Mono",
               "SFMono-Regular", "Consolas",
               "Liberation Mono", monospace;
 
-body                              { font-family: $font-body; }
+body                              { font-family: "Gentium Book Plus", serif; }
+:lang(zh) body,
+:lang(ja) body                    { font-family: "Source Han Serif SC", "Source Han Serif JP", "Source Han Serif", serif; }
 
 article {
-  font-family: $font-title;
   font-size: 1.05em;
   line-height: 1.85;
   text-rendering: optimizeLegibility;
@@ -141,15 +136,6 @@ article {
   line-break: strict;
   word-break: break-word;
 }
-
-.single-title, .single-subtitle,
-.home-title, .home-subtitle,
-h1, h2, h3, h4, h5, h6            { font-family: $font-title; }
-
-.header-title, .menu, .menu-link,
-.breadcrumb, #toc-auto, .post-tags,
-.pagination, footer .footer-container,
-.summary .post-footer              { font-family: $font-body; }
 
 code, pre, kbd, samp,
 .code-block, .highlight            { font-family: $font-mono; }
