@@ -18,3 +18,10 @@ Thumbs.db
 
 # Novel helper
 novel-helper/
+
+# Cloudflare Pages deployment snapshots (for offline comparison)
+cloud_*.html
+cloud_main.css
+
+# Resource diff placeholder
+resource_diff.txt

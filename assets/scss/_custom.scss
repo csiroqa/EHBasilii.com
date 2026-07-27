@@ -403,6 +403,8 @@ body {
   font-size: 20px;
   line-height: 1.8;
   font-variant-numeric: oldstyle-nums;
+  font-variant-ligatures: common-ligatures;
+  font-kerning: normal;
 }
 
 // 首页文章卡片元数据统一 18.7px（比正文略小，格书）
@@ -440,15 +442,11 @@ article {
   widows: 2;
   orphans: 2;
   text-wrap: pretty;
-  font-variant-ligatures: common-ligatures;
-  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "onum" 1;
 }
 
 :lang(zh) article,
 :lang(ja) article {
   hyphens: none;
-  font-variant-ligatures: normal;
-  font-feature-settings: normal;
   hanging-punctuation: first allow-end;
 }
 
