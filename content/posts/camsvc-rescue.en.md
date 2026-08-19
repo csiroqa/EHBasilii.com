@@ -31,6 +31,8 @@ hiddenFromFeed: false
 summary: "After deleting Windows camsvc's SQLite databases, Wi-Fi stopped working, the camera wouldn't open, and GPS was completely dead — a full rescue postmortem with root cause analysis, repair steps, and lessons learned."
 ---
 
+> DeepSeek-V3.2 used to polish translation
+
 > **System**: Windows 11 25H2
 > 
 > **Incident**: Before 2026/07/14

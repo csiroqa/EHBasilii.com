@@ -30,6 +30,8 @@ hiddenFromFeed: false
 summary: "删掉 Windows camsvc 的 SQLite 数据库后 Wi-Fi 搜不到、摄像头打不开、定位彻底没反应——一次完整的翻车抢救实录，内容包含根因分析、修复流程和教训。"
 ---
 
+> 使用 DeepSeek-V3.2 整理语言
+
 > **系统**: Windows 11 25H2
 >
 > **事发时间**: 早于 2026/07/14
