@@ -312,7 +312,7 @@
 {{- end -}}
 
 {{- /* Page-specific CJK font — lightweight, only chars used on this page */ -}}
-{{- $fontMap := .Site.Data.fonts -}}
+{{- $fontMap := hugo.Data.fonts -}}
 {{- if and .IsPage .File $fontMap -}}
   {{- $filePath := .File.Path | replaceRE "\\\\" "/" -}}
   {{- $pageFont := index $fontMap $filePath -}}
