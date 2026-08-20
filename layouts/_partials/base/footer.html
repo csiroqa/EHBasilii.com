@@ -1,3 +1,16 @@
+{{- /*
+  Site footer partial.
+
+  Renders the page footer with configurable sections:
+  - Powered by (Hugo and FixIt theme links)
+  - Copyright (year, author, license)
+  - Site running time counter
+  - Visitor statistics (busuanzi)
+  - Gov/ICP filing information (beian)
+
+  Called from: layouts/baseof.html.
+*/ -}}
+
 {{- $footerConfig := .Site.Params.footer -}}
 
 {{- if ne $footerConfig.enable false -}}
@@ -6,17 +19,18 @@
       {{- /*  Custom Footer */ -}}
       {{- block "custom-footer" . }}{{ end -}}
 
-      {{- /* Powered by Hugo and Theme - edited FixIt */ -}}
+      {{- /* Powered by Hugo and Theme - FixIt */ -}}
       {{- if ne $footerConfig.powered.enable false -}}
         <div class="footer-line powered{{ with $footerConfig.order.powered }} order-{{ . }}{{ end }}">
-          {{- $hugo := printf `<a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo %v">{hugoLogo}Hugo</a>` hugo.Version -}}
+          {{- $hugo := replace `<a href="https://github.com/gohugoio/hugo?v={hugoVersion}" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo {hugoVersion}">{hugoLogo}Hugo</a>` "{hugoVersion}" hugo.Version -}}
           {{- $themeEdited := T "footer.themeEdited" -}}
-          {{- $theme := printf `<a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt %v">{themeLogo}%v FixIt</a>` (hugo.Store.Get "version") $themeEdited -}}
-          {{- if $footerConfig.powered.hugoLogo -}}
-          {{- $hugoLogo := printf `<img class="hugo-icon" src="%v" alt="Hugo logo" /> ` (resources.Get "images/hugo.svg" | minify).RelPermalink -}}
+          {{- $theme := replace `<a href="https://github.com/hugo-fixit/FixIt?v={themeVersion}" target="_blank" rel="external" title="FixIt {themeVersion}">{themeLogo}{themeEdited} FixIt</a>` "{themeVersion}" (hugo.Store.Get "version") -}}
+          {{- $theme = replace $theme "{themeEdited}" $themeEdited -}}
+          {{- if $footerConfig.powered.hugo_logo -}}
+            {{- $hugoLogo := printf `<img class="hugo-icon" src="%v" alt="Hugo logo" /> ` (resources.Get "images/hugo.svg" | minify).RelPermalink -}}
             {{- $hugo = replace $hugo "{hugoLogo}" $hugoLogo -}}
           {{- end -}}
-          {{- if $footerConfig.powered.themeLogo -}}
+          {{- if $footerConfig.powered.theme_logo -}}
             {{- $themeLogo := printf `<img class="fixit-icon" src="%v" alt="FixIt logo" /> ` (resources.Get "images/fixit.svg" | minify).RelPermalink -}}
             {{- $theme = replace $theme "{themeLogo}" $themeLogo -}}
           {{- end -}}
@@ -54,7 +68,7 @@
         </div>
       {{- end -}}
 
-      {{- $siteTime := .Site.Store.Get "siteTime" -}}
+      {{- $siteTime := .Site.Params.footer.site_time -}}
       {{- if $siteTime.enable -}}
         <div class="footer-line statistics{{ with $footerConfig.order.statistics }} order-{{ . }}{{ end }}">
           {{- if $siteTime.enable | and $siteTime.value -}}
@@ -62,8 +76,8 @@
               <span class="site-time" title='{{ T "footer.siteRunning" }}'>
                 {{- $siteTimeIcon := printf (cond .Animate "%v animate-icon" "%v") .Icon -}}
                 {{- dict "Class" $siteTimeIcon | partial "plugin/icon.html" -}}
-                {{- with .Pre -}}<span class="ms-1 d-none">{{ . }}</span>{{- end -}}
-                {{- printf `<span class="run-times variant-numeric ms-1">%v</span>` (T "footer.siteRunning") | safeHTML -}}
+                {{- with .Pre -}}<span class="ms-1 hidden">{{ . }}</span>{{- end -}}
+                {{- printf `<span class="run-times tabular-nums lining-nums ms-1">%v</span>` (T "footer.siteRunning") | safeHTML -}}
               </span>
             {{- end -}}
           {{- end -}}
@@ -76,7 +90,7 @@
         {{- $loading := dict "Class" "fa-solid fa-spinner fa-spin" | partial "plugin/icon.html" -}}
         {{- $iconUV := dict "Class" "fa-regular fa-user me-1" | partial "plugin/icon.html" -}}
         {{- $iconPV := dict "Class" "fa-regular fa-eye me-1" | partial "plugin/icon.html" -}}
-        <div class="footer-line visitor{{ with $footerConfig.order.visitor }} order-{{ . }}{{ end }}{{ if not $busuanzi.siteViews }} d-none{{ end }}">
+        <div class="footer-line visitor{{ with $footerConfig.order.visitor }} order-{{ . }}{{ end }}{{ if not $busuanzi.site_views }} hidden{{ end }}">
           <span id="busuanzi_container_site_uv" title='{{ T "footer.siteUV" }}'>
             {{- $iconUV }}<span id="busuanzi_value_site_uv">{{ $loading }}</span>
             {{- /* NO_SPACING */ -}}
