@@ -19,8 +19,8 @@ comment: true
 weight: 0
 tags:
   - Windows
-  - camsvc
   - SQLite
+  - camsvc
   - postmortem
 categories:
   - Tech
@@ -28,7 +28,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary: "After deleting Windows camsvc's SQLite databases, Wi-Fi stopped working, the camera wouldn't open, and GPS was completely dead — a full rescue postmortem with root cause analysis, repair steps, and lessons learned."
+summary: "Deleting Windows camsvc's SQLite databases broke Wi-Fi, the camera, GPS, and the Settings app. A full postmortem: root cause analysis, the repair pipeline, and lessons on deleting WAL before the main DB, fixing permissions first, and restarting only after repairs."
 ---
 
 > DeepSeek-V3.2 used to polish translation

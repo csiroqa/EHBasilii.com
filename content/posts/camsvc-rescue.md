@@ -20,6 +20,7 @@ weight: 0
 tags:
   - Windows
   - SQLite
+  - camsvc
   - 翻车记录
 categories:
   - 技術
@@ -27,7 +28,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary: "删掉 Windows camsvc 的 SQLite 数据库后 Wi-Fi 搜不到、摄像头打不开、定位彻底没反应——一次完整的翻车抢救实录，内容包含根因分析、修复流程和教训。"
+summary: "误删 Windows camsvc 的 SQLite 数据库，Wi-Fi、摄像头、定位、系统设置全线瘫痪。本文复盘完整的根因分析与修复流程，并总结「先删 WAL 再动主库」「权限先行」「修复后再重启」等教训。"
 ---
 
 > 使用 DeepSeek-V3.2 整理语言
