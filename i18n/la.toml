@@ -79,7 +79,7 @@ poweredBySome = "Fultus ab {{ .Hugo }} | Thēma - {{ .Theme }}"
 siteUV = "Vīsitātōrēs tōtī"
 sitePV = "Vīsitātiōnēs tōtae"
 siteRunning = "Situs currit ..."
-themeEdited = "ēmendātum"
+themeEdited = "mūtātum"
 # === partials/footer.html ===
 
 # === partials/comment.html ===
@@ -111,6 +111,11 @@ exitFullscreen = "Plēnam tēlam exīre"
 cookieconsentMessage = "Haec pāgina ūtitur Cookies ad experientiam tuam meliōrem faciendam."
 cookieconsentDismiss = "Intellēxī!"
 cookieconsentLink = "Plūra cognōscere"
+searchBy = "Quaerere per"
+navigate = "Navigāre"
+select = "Ēligere"
+close = "Claudere"
+refresh = "Reficere"
 # === partials/assets.html ===
 
 # === partials/plugin/share.html ===
@@ -128,7 +133,7 @@ views = "vīsūs"
 comments = "commenta"
 author = "Auctor"
 updatedOnDate = "Diē {{ .Date }} renovātum"
-readMarkdown = "Textum orginālem legere"
+readMarkdown = "Textum originalem legere"
 viewSource = "Fontem īnspicere"
 editThisPage = "Hanc pāginam recēnsēre"
 reportIssue = "Prōblēma nūntiāre"
@@ -143,6 +148,8 @@ password = "Signum"
 enterBtn = "Intrāre"
 encryptyAgain = "Dēnuō encryptāre"
 relatedContent = "Contentum Cognātum"
+encryptionWarning = "Contentum clāvē occulendum dētectum est, sed adhūc in textū apertō exstat."
+encryptionCommand = "Post aedificium `npx @hugo-fixit/encrypt` exercē ut id vērē occultēs."
 
 [single.includedIn]
 categories = "in {{ .Categories }} receptum"
@@ -241,7 +248,7 @@ deprecated = "DEPRECĀTUM"
 # === diagram actions ===
 [diagram]
 zoomIn = "Augēre"
-zoomOut = "Minvere"
+zoomOut = "Minuere"
 reset = "Redintegrāre"
 download = "SVG dēpōnere"
 # === diagram actions ===
@@ -251,3 +258,9 @@ download = "SVG dēpōnere"
 diagram = "Diagrāmma"
 code = "Cōdex"
 # === tabs related ===
+
+# === Service Worker ===
+[serviceWorker]
+updateTitle = "Ēmendātiō Praestō"
+updateText = "Nova huius sitūs versiō praestō est."
+# === Service Worker ===

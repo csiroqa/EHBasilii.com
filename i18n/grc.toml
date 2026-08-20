@@ -110,6 +110,11 @@ exitFullscreen = "Ἔξιθι παντελοῦς ὄψεως"
 cookieconsentMessage = "Ἡ σελὶς ἥδε χρῆται Cookies πρὸς βελτίωσιν τῆς πείρας σου."
 cookieconsentDismiss = "Συνίημι!"
 cookieconsentLink = "Πλείω μάνθανε"
+searchBy = "Ζήτει κατὰ"
+navigate = "Πορεύου"
+select = "Ἔκλεξαι"
+close = "Κλεῖσον"
+refresh = "Ἀνανέωσον"
 # === partials/assets.html ===
 
 # === partials/plugin/share.html ===
@@ -142,6 +147,8 @@ password = "Ξύνθημα"
 enterBtn = "Εἴσιθι"
 encryptyAgain = "Αὖθις κρυπτογράφησον"
 relatedContent = "Τὰ Ἐνεόντα Προσήκοντα"
+encryptionWarning = "Κρυπτογραφία εὕρηται, ἀλλὰ ἔτι ἐν σαφεῖ κειμένῳ ἐστί."
+encryptionCommand = "Μετὰ τὴν οἰκοδομὴν `npx @hugo-fixit/encrypt` ἔκτελε ἵνα ὄντως αὐτὰ κρυπτογραφήσῃς."
 
 [single.includedIn]
 categories = "ἐν ταῖς {{ .Categories }} περιεχόμενον"
@@ -250,3 +257,9 @@ download = "SVG Κατάθου"
 diagram = "Διάγραμμα"
 code = "Κώδιξ"
 # === tabs related ===
+
+# === Service Worker ===
+[serviceWorker]
+updateTitle = "Ἀνανέωσις Πρόχειρος"
+updateText = "Νέα ἔκδοσις τούτου τοῦ τόπου πρόχειρός ἐστιν."
+# === Service Worker ===
