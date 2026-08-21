@@ -12,6 +12,17 @@ taxonomy = ['html']
 term = ['html', 'rss']
 
 [params]
+# FixIt theme version — keep in sync with the checked-out theme version.
+version = "v1.0.0-alpha-mszlt87u"
+# Site description (used for SEO / meta description).
+description = "EHBasilii Orchestration — 书卷（Bookish）风格的多语言个人博客，践行典籍排版与现代网络阅读的交汇。"
+# Site keywords.
+keywords = ["EHBasilii", "Orchestration", "博客", "古典学", "翻译", "Hugo", "FixIt"]
+# Site default theme: "light", "dark" or "auto".
+default_theme = "auto"
+# Date format.
+date_format = "2006-01-02"
+# Whether to enable merging missing translations from other languages.
 enable_translation_merge = true
 
 [markup]
@@ -68,10 +79,10 @@ enable = false
 # Home page profile
 [params.home.profile]
 enable = true
-onlyFirstPage = false
+only_first_page = false
 gravatar_email = "contact@ehbasilii.com"
 avatar_url = "/images/avatar.svg"
-avatarMenu = ""
+avatar_menu = ""
 title = ""
 subtitle = ""
 typeit = true
