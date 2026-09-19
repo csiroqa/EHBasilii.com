@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="66 66 68 68" role="img" aria-label="EHBasilii Orchestration">
+  <title>EHBasilii Orchestration</title>
+  <style>
+    .ink{stroke-linecap:round;stroke-linejoin:round;fill:none;stroke-opacity:1;fill-opacity:1;stroke:#e3ddd3;stroke-width:4.2075}
+    @media (prefers-color-scheme:light){.ink{stroke:#2d2822}}
+  </style>
+  <path class="ink" d="m 127.13499,80.364998 h -3.74999 -3.75 m 0,0 -3.75,10e-7 h -3.75 m 0,0 H 106.0675 100 m 0,0 h -6.067499 -6.0675 m 0,0 h -3.75 L 80.365,80.365 m 0,0 h -3.750001 -3.750001"/>
+  <path class="ink" d="m 80.364998,72.865 v 3.750001 3.750001 l -10e-7,3.750001 v 3.750001 6.067498 6.067497 6.067501 6.0675 3.74999 3.75 l -10e-7,3.75 v 3.75"/>
+  <path class="ink" d="m 119.63499,127.13499 v -3.74999 -3.75 -3.75 -3.75 -6.0675 -6.067501 -6.0675 -6.067501 -3.75 -3.749999 -3.75 V 72.865"/>
+  <path class="ink" d="m 72.864998,119.635 h 3.749999 3.749999 3.749999 3.749999 6.067501 6.067501 6.067504 6.0675 3.74999 3.75 3.75 3.75"/>
+  <path class="ink" d="m 68.23,99.999999 h 6.077062 6.077061 6.077063 6.077063 3.75591 3.755911 3.7559 3.75591 6.07707 6.07706 6.07706 6.07707"/>
+  <path class="ink" d="m 99.999995,131.77 v -6.0675 l 10e-7,-6.0675 v -6.0675 l 10e-7,-6.0675 v -3.75 -3.750001 l 1e-6,-3.749999 V 92.5 l 10e-7,-6.067499 v -6.0675 L 100,74.297502 v -6.0675"/>
+  <circle class="ink" cx="100" cy="100" r="31.933851"/>
+</svg>

@@ -23,5 +23,9 @@ novel-helper/
 cloud_*.html
 cloud_main.css
 
+# Python (scripts/subsets.py, scripts/mark/build_mark.py)
+__pycache__/
+*.pyc
+
 # Resource diff placeholder
 resource_diff.txt

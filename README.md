@@ -10,6 +10,7 @@
 | 主题 | FixIt（深度定制） |
 | 字体 | 全栈自托管 WOFF2，含 Gentium Book Plus（正文）、Iosevka Fixed Slab（等宽）、Source Serif 4（CJK 降级）、Source Han Serif/Sans SC（CJK 正文与标题）|
 | 字型优化 | Python 字体子集工具（[subsets.py](scripts/subsets.py)）：逐页 CJK 字符提取 → MD5 哈希去重 → fontTools 子集化，每页仅加载页面独有的字形 |
+| 站徽图标 | 几何印单一母版 → favicon.svg / .ico / PNG / Safari 剪影全套（[build_mark.py](scripts/mark/build_mark.py)）：按目标尺寸光学配重，16 px 降为「外圆＋九宫栏」简形 |
 | 样式 | SCSS 覆写主题默认变量，CSS `light-dark()` 实现双色板 |
 | 图表 | Mermaid (ESM, CDN 加载)，`look: handDrawn` 手绘风格，多层 SVG（亮色/暗色/中性）+ Panzoom 缩放平移 + 主题切换同步 |
 | 连字 | Hyphenopoly.js，对英文、法文、拉丁文、古希腊文启用 |
@@ -31,6 +32,19 @@
 ### 字体系统
 
 正文使用 Gentium Book Plus，一款专为长篇阅读设计的文艺复兴风格衬线字体。代码使用 Iosevka Fixed Slab，窄体等宽且带有 slab serif。CJK 内容回退至 Source Han Serif/Sans。英文与 CJK 正文基线与灰度经过反复调试以取得视觉协调。
+
+### 站徽 — 几何印
+
+站点标识是一幅圆规直尺式的几何构造：外圆之内，九宫格上叠四方胜、五小胜与内层编织。母版 [favicon-master.svg](scripts/mark/favicon-master.svg) 画在 A4 版面上，图形仅占中央 64.13 mm 见方，所有发布图标由 [build_mark.py](scripts/mark/build_mark.py) 从这一处裁切生成。
+
+同一幅线稿在不同尺寸下不可通吃：原稿线宽（约占图形 0.41 %）缩到 16 px 只剩 0.07 px，会糊成灰雾。因此按目标尺寸光学配重——180 px 保留全部细节，32/48 px 去内层编织，16 px 只留外圆与九宫栏；描边粗细以「目标设备像素」而非固定毫米数给定。
+
+底色上，**标签页图标一律透明**：不透明的宣纸底在暗色标签栏上会变成一张刺眼的白贴纸，这正是透明的原因。只有「自有表面」或「没有底色可借」的地方才保留实底：`apple-touch-icon` 用宣纸底（iOS 会把透明合成到黑），`favicon.ico` 的 48/256 帧用**拓本**（砚石底宣纸线）供 Windows 任务栏与固定标签使用。
+
+墨色随配色方案切换，且**以站点主题为准**（不是只看操作系统）：`favicon.svg`／`favicon-32x32.png`／`favicon-16x16.png`／`favicon.ico` 各成对产出，页内脚本按 `data-theme-mode` 与 `fixit:switch-theme` 事件把每个 `<link rel="icon">` 归拢到对应的一份。之所以要这一层：Chromium 实测**直接取 `favicon.ico`**，`<link media>` 与文档内 `prefers-color-scheme` 都可能不生效（WebKit 侧另见 [bug 309949](https://wiki.webkit.org/show_bug.cgi?id=309949)），因此 `.ico` 也必须成对，标签页内层媒体的查询只作无 JS 时的兜底。
+
+角色分工：**EB 字母徽（`avatar.svg`）为作者身份，几何印为站点本身。**
+
 
 ### 朱丝栏（代码块）
 

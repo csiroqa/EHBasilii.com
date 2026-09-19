@@ -43,6 +43,25 @@ email = "contact@ehbasilii.com"
 link = "https://www.ehbasilii.com/"
 avatar = "/images/avatar.svg"
 
+# App / favicon / PWA configuration.
+# Every icon is generated from the single site-mark master by
+# scripts/mark/build_mark.py — do not hand-replace the files in static/.
+[params.app]
+pwa = false
+name = "EHBasilii Orchestration"
+no_favicon = false
+# SVG favicon; a -dark twin sits beside it and the head script picks per theme.
+svg_favicon = "/favicon.svg"
+# Tint of the Safari pinned-tab silhouette (松烟墨).
+mask_color = "#2d2822"
+# Windows tile colour (宣纸).
+tile_color = "#faf7f0"
+
+# Mobile address-bar colour: 宣纸 in the light scheme, 砚石 in the dark one.
+[params.app.theme_color]
+light = "#faf7f0"
+dark = "#1e1d1a"
+
 [params.share]
 enable = true
 Twitter = true
@@ -95,8 +114,9 @@ enable = true
 paginate = 6
 image_preview = true
 
-# [params.header.title]
-# logo = "/images/favicon.svg"
+# Header title logo (the site mark; the file is scheme-aware).
+[params.header.title]
+logo = "/images/site-mark.svg"
 
 [params.footer]
 copyright = true
