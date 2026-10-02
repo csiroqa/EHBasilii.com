@@ -6,7 +6,7 @@ slug: camsvc-rescue
 author:
   name: "Eleutherus Hēsychius Basiliī"
   link: "https://www.ehbasilii.com/"
-description: "After deleting Windows camsvc's SQLite databases, Wi-Fi, camera, and GPS all stopped working — a full postmortem and rescue record."
+description: "Deleting the camsvc databases was supposed to free some disk space. What actually went down was the camera, the Wi-Fi, location, and Settings."
 keywords:
   - Windows
   - camsvc
@@ -28,7 +28,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary: "Deleting Windows camsvc's SQLite databases broke Wi-Fi, the camera, GPS, and the Settings app. A full postmortem: root cause analysis, the repair pipeline, and lessons on deleting WAL before the main DB, fixing permissions first, and restarting only after repairs."
+summary: "The order of repairs is the whole thing: permissions first, leftovers cleared second, reboot last. Do it backwards and none of it takes."
 ---
 
 > DeepSeek-V3.2 used to polish translation
@@ -204,7 +204,7 @@ icacls "C:\ProgramData\Microsoft\Windows\CapabilityAccessManager" /grant adminis
 icacls "C:\ProgramData\Microsoft\Windows\CapabilityAccessManager" /reset /T /C
 ```
 
-> This is **the single most critical step** in the entire repair. If camsvc doesn't have permission to write new databases in this directory, every command after this is useless. (AI review)
+> This is **the single most critical step** in the entire repair. If camsvc doesn't have permission to write new databases in this directory, every command after this is useless.
 
 #### B2 — Clean Up Leftovers
 

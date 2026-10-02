@@ -6,7 +6,7 @@ slug: camsvc-rescue
 author:
   name: "Eleutherus Hēsychius Basiliī"
   link: "https://www.ehbasilii.com/"
-description: "删掉 Windows camsvc 的 SQLite 数据库后，Wi-Fi、摄像头、定位全部瘫痪——一次完整的翻车抢救记录与根因实录。"
+description: "本来只想清磁盘，删的是 camsvc 的库。结果塌的不止摄像头——Wi-Fi、定位，连设置都打不开了。"
 keywords:
   - Windows
   - camsvc
@@ -28,7 +28,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary: "误删 Windows camsvc 的 SQLite 数据库，Wi-Fi、摄像头、定位、系统设置全线瘫痪。本文复盘完整的根因分析与修复流程，并总结「先删 WAL 再动主库」「权限先行」「修复后再重启」等教训。"
+summary: "修的顺序就是全部：先修权限，再清残留，最后才重启。反着来，一步都白走。"
 ---
 
 > 使用 DeepSeek-V3.2 整理语言
@@ -76,7 +76,7 @@ icacls "C:\ProgramData\Microsoft\Windows\CapabilityAccessManager" /grant adminis
 - `CapabilityAccessManager.db` —— 哪些应用申请了哪些系统能力（摄像头、麦克风、位置、Wi-Fi……）
 - `CapabilityConsentStorage.db` —— 每个能力用户同意还是拒绝了
 
-`SQLite` 默认开 WAL（Write-Ahead Log）模式。正常情况下日志写到一定量就会 checkpoint（合并回主库）。但如果 checkpoint 因为什么原因卡住了，那个 `-wal` 文件就会一路疯涨。我碰上的是就是这种情况，一个日志文件吃了 30 多 GB。
+`SQLite` 默认开 WAL（Write-Ahead Log）模式。正常情况下日志写到一定量就会 checkpoint（合并回主库）。但如果 checkpoint 因为什么原因卡住了，那个 `-wal` 文件就会一路疯涨。我碰上的正是这种情况，一个日志文件吃了 30 多 GB。
 
 > 补一句：事后跟朋友聊，他那边同样的路径只占了 795 MB。所以不是每个人都暴涨，但如果你遇到了，先查 WAL 文件大小再说。
 
@@ -148,7 +148,7 @@ graph TB
 
 ## 三、修复流程
 
-希望阶段 A 能够是正确的最短路径。
+如果你还没删库，先走阶段 A。
 
 ### 阶段 A：如果你还没删库——处理磁盘暴涨
 
@@ -204,7 +204,7 @@ icacls "C:\ProgramData\Microsoft\Windows\CapabilityAccessManager" /grant adminis
 icacls "C:\ProgramData\Microsoft\Windows\CapabilityAccessManager" /reset /T /C
 ```
 
-> 这是整个修复过程中 **最关键的一步**。camsvc 如果没有权限在目录下写新数据库，后面十条命令都是白搭。（AI review）
+> 这是整个修复过程中 **最关键的一步**。camsvc 如果没有权限在目录下写新数据库，后面十条命令都是白搭。
 
 #### B2 —— 清理残留
 
@@ -277,8 +277,6 @@ Restart-Computer
 - [ ] 定位能获取到位置吗？
 - [ ] 设置 → 隐私与安全性 → 应用权限 → 每个选项点进去不闪退？
 
-确实。
-
 ---
 
 ## 四、我在四个小时里到底跑了什么命令
@@ -310,7 +308,7 @@ Restart-Computer
 
 3. **重启还是修复重要一环。** 把该做的修复都做完，再重启让它们走一遍正确的启动顺序。先重启再修，等于先洗牌再整理，白费功夫。
 
-4. **多模型交叉验证是真的有用。** 不同模型，甚至更好，不同家族的模型往往能给出不同的切入点。这次双模型会诊确实是专家会诊的效果。
+4. **多模型交叉验证是真的有用。** 不同家族的模型切入点不一样，各说各的话反而能互相补。这次双模型会诊确实像专家会诊。
 
 5. **Windows 的屎山没救了。** `camsvc` → `lfsvc` → `RuntimeBroker` → `Settings` → `drivers`，已经深度耦合。2026 年删一个，连 Wi-Fi 都能跟着挂！
 
@@ -320,7 +318,7 @@ Restart-Computer
 Get-HotFix | Where-Object HotFixID -match "KB5101650|KB5095093"
 ```
 
-据说这两个补丁都有助于这一状况，如上述指令没有输出，可以尝试
+据说这两个补丁都有帮助。上面的指令如果没有任何输出，可以直接：
 
 ```powershell 7.6.3
 Start-Process ms-settings:windowsupdate

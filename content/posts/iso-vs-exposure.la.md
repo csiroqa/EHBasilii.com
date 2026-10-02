@@ -6,7 +6,7 @@ slug: iso-vs-exposure
 author:
   name: "Eleutherus Hēsychius Basiliī"
   link: "https://www.ehbasilii.com/"
-description: "\"ISO in ipsā camerā augēre melius quam in post-positione illustrāre\" fuit cōnclūsiō aetātis AFE extrā sēnsōrem positae. Sub ADC novīs in sēnsōre positis et facultatibus ISO multiplicibus nātīvīs, num haec opīniō adhūc valet?"
+description: "\"ISO in ipsā camerā augēre melius quam in post-positione illustrāre\" vetus est aetātis, quae ante vīgintī annōs exstitit. ADC novī numerō suō pōsītī rationem eius totam mūtāvērunt: num adhūc valet?"
 keywords:
   - ISO
   - ratiō signī ad strēpitum
@@ -27,7 +27,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary: "\"Amplificātiō analogica prius fidēlior erat\" in historiā AFE extrā sēnsōrem positī — sub ADC novīs columnārum in parallelum in sēnsōre posītīs et ISO multiplicī nātīvō, cūr \"ISO prius augēre fidēlius\" nōn semper vērum iam sit, duōbus tantum terminīs exceptīs."
+summary: "Vix superest strēpitus posticus quem comprimere mereātur, ut ea optiō nōn indifferēns sit. Duō tantum limīnēs manent: lūx extrema parva, et regiōnēs expositiōnis nimiae."
 ---
 
 Quod adhūc sponte putāmus "ISO in ipsā camerā augēre semper melius esse quam in post-positione illustrāre", in eō positum est quod in mente adhūc seriem signōrum ante vīgintī annōs ēlabōrātam gerimus. Illīs temporibus sensor erat simplex array pīxellōrum passīvōrum: signum analogicum extrā sēnsōrem dūcendum erat, per vīās PCB centīmetrīs mēnsās, in PGA intra chip AFE sēparātum ingrediēns, tandemque ad ADC externum perveniēns. Viae longae, impedantia alta, perturbātiō multa — strēpitus tōtīus catēnae ad initium relātus ad complūrēs decadēs ēlectrōniōrum ascendēbat. Nisi signum prius in dominō analogicō sursum impellerētur, strēpitus quantizātiōnis ADC posticī et strēpitus fundī circuitūs microdynamica signōrum infirmōrum uerē consumeret; ruīna ratiōnis signī ad strēpitum oculīs vidēbātur. Sub hōc systēmate (imō et in aetāte pelliculae, cum arte coāctā et pretiōsā vellicātiōne et amplificātiōne subtīlī posticā) "amplificātiō analogica prius fidēlior est" vērō erat vērum.

@@ -6,7 +6,7 @@ slug: iso-vs-exposure
 author:
   name: "Eleutherus Hēsychius Basiliī"
   link: "https://www.ehbasilii.com/"
-description: "\"Boosting ISO beats brightening in post\" was the conclusion of the off-chip AFE signal-chain era. Under modern column-parallel on-chip ADCs and multi-native-ISO architectures, does that intuition still hold?"
+description: "\"Boosting ISO beats brightening in post\" is twenty-year-old advice, left over from the off-chip AFE era. Column-parallel on-chip ADCs replaced the arithmetic underneath it. Does it still hold?"
 keywords:
   - ISO
   - signal-to-noise ratio
@@ -27,7 +27,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary: "From the off-chip AFE era's \"analog gain is more faithful\" to modern column-parallel on-chip ADCs and multi-native ISO — why \"boosting ISO in-camera is more faithful\" is no longer always true, with only two edge-case exceptions."
+summary: "There is rarely enough downstream noise left to suppress for the choice to matter. Two exceptions survive: extreme low light, and blown highlights."
 ---
 
 The reason we still instinctively assume that "pushing ISO in-camera is always better than brightening in post" is that, deep down, we're still running the signal chain from twenty years ago. Back then, the sensor was a purely passive pixel array: the analog signal had to be pulled off-chip, travel along PCB traces measured in centimeters, pass through the PGA inside a separate AFE chip, and finally reach an off-board ADC. Long traces, high impedance, plenty of interference — the whole chain's input-referred noise ran to dozens of electrons. If you didn't push the signal up in the analog domain first, the downstream ADC's quantization noise and the circuit's floor noise would genuinely eat the micro-dynamics of weak signals; the collapse in SNR was visible to the naked eye. Under that system (or indeed the film era's constrained, expensive practice of pushing film and its fine-grain late-stage gain), "analog gain up front is more faithful" was, in fact, true.

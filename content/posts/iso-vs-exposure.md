@@ -6,7 +6,7 @@ slug: iso-vs-exposure
 author:
   name: "Eleutherus Hēsychius Basiliī"
   link: "https://www.ehbasilii.com/"
-description: "「前期提 ISO 比后期拉曝光好」是二十年前外置 AFE 信号链时代的结论。现代列并行片上 ADC 与多原生感光度架构下，这个直觉还成立吗？"
+description: "「前期提 ISO 比后期拉曝光好」——外置 AFE 时代留下的老话。列并行片上 ADC 出来之后，它的算术前提整个换掉了，还站得住吗？"
 keywords:
   - ISO
   - 信噪比
@@ -27,7 +27,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary: "从外置 AFE 时代的「前期增益更保真」，到现代列并行片上 ADC 与多原生感光度架构——为什么「前期提 ISO 更保真」在今天已经不再总是真理，且仅剩两个边界例外。"
+summary: "今天其实没什么后级噪声值得压，那一点模拟增益自然也就无所谓了。只有两处例外：极端低光，和过曝区域。"
 ---
 
 
